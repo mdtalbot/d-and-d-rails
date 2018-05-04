@@ -1,0 +1,12 @@
+<h1>Current Monsters:</h1>
+<%= render "heading" %>
+<ul>
+<% @monsters.each do |monster| %>
+<li><%= link_to monster.name, monster_path(monster) %></li>
+  <ul>
+    <li><%= monster.description %></li>
+  </ul>
+<% end %>
+</ul>
+
+<%= link_to "Create New Monster", new_monster_path %>

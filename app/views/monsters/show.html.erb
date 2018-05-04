@@ -1,0 +1,11 @@
+<h1><%= @monster.name %></h1>
+<span><b>Description:</b> <em><%= @monster.description %></em></span>
+<ul>
+  <li><b>Hit Points:</b> <em><%= @monster.hit_points %></em></li>
+</ul>
+<%= link_to "Return to All Monsters", monsters_path %>
+<%= link_to "Edit Monster", edit_monster_path(@monster) %>
+<br><br>
+<%= form_tag @monster, method: "DELETE" do %>
+  <%= submit_tag "Delete This Monster" %>
+<% end %>

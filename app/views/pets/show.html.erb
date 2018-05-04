@@ -1,0 +1,11 @@
+<h1><%= @pet.name %></h1>
+<h2><%= @pet.description %></h2>
+<h3>Owner: <%= @pet.character.name%></h3>
+<!-- t.string "description"
+t.integer "character_id" -->
+
+<%= link_to "Return to All Pets", pets_path %>
+
+<%= form_tag @pet, method: "DELETE" do %>
+  <%= submit_tag "Delete This Pet" %>
+<% end %>

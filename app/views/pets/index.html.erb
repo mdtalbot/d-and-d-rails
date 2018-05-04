@@ -1,0 +1,10 @@
+<h1>Current Pets:</h1>
+
+<% @pets.each do |pet| %>
+<h3><%= link_to pet.name, pet_path(pet) %></h3>
+<ul>
+  <li>Owner: <%= link_to pet.character.name, character_path(pet.character) %></li>
+</ul>
+<% end %>
+
+<em><%= link_to "Create New Pet", new_pet_path %></em>

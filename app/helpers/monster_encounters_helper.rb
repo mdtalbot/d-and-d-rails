@@ -1,0 +1,2 @@
+module MonsterEncountersHelper
+end

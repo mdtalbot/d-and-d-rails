@@ -1,0 +1,22 @@
+<h1><%= @character.name %></h1>
+<ul>
+  <li>Strength: <%= @character.strength %></li>
+  <li>Dexterity: <%= @character.dexterity %></li>
+  <li>Constitution: <%= @character.consitution %></li>
+  <li>Intelligence: <%= @character.intelligence %></li>
+  <li>Wisdom: <%= @character.wisdom %></li>
+  <li>Charisma: <%= @character.charisma %></li>
+</ul>
+<p>Pets:</p>
+<% @character.pets.each do |pet| %>
+<ul>
+  <li><%= pet.name %></li>
+</ul>
+<% end %>
+
+<h3><%= link_to "Edit", edit_character_path(@character) %><br></h3>
+<h3><%= link_to "Return to All Characters", characters_path %><br>
+
+<%= form_tag @character, method: "DELETE" do %>
+  <%= submit_tag "Delete this character" %>
+<% end %>

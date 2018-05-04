@@ -1,0 +1,2 @@
+class CharacterEncountersController < ApplicationController
+end

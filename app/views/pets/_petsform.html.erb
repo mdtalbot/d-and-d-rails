@@ -1,0 +1,13 @@
+<%= form_for @pet do |f| %>
+<%= f.label :name %>
+<br><br>
+<%= f.text_field :name %>
+<br><br><br>
+<%= f.label :description %>
+<br>
+<%= f.text_area :description %>
+<br><br><br>
+<%= f.label "Owner" %>
+<%= f.collection_select :character_id, @characters, :id, :name, {prompt: "Please select an owner" } %>
+<%= f.submit %>
+<% end %>
