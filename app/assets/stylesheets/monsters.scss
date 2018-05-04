@@ -1,3 +1,8 @@
 // Place all the styles related to the Monsters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+form input[type='text'].monster_name {
+      width: 24.5%;
+      height: 30px;
+      font-size: 18px;
+    }

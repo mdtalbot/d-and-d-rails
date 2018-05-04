@@ -5,4 +5,5 @@ class Encounter < ApplicationRecord
   has_many :monsters, through: :monster_encounters
   validates :name, presence: true
   validates :content, presence: true
+  validates :name, uniqueness: true
 end
