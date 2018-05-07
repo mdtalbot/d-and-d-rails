@@ -1,0 +1,3 @@
+<% if session[:user_id] == @user.id %>
+  <%= link_to "My Encounters", my_encounters_path %>
+<% end %>

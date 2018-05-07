@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Encounter Generator", '/', id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Encounters", encounters_path %></li>
+        <li><%= link_to "Characters", characters_path %></li>
+        <li><%= link_to "Monsters", monsters_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Account", user_path(current_user) %></li>
+          <li><%= link_to "Log out", logout_path, method: :post %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Sign up", register_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

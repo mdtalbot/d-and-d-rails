@@ -3,6 +3,15 @@ class EncountersController < ApplicationController
     @encounters = Encounter.all
   end
 
+  def my_encounters
+    if logged_in?
+      @encounters = current_user.encounters
+      render :index
+    else
+      redirect_to encounters_path
+    end
+  end
+
   def search
     find_encounter_by_name
     if @encounters.length > 0
@@ -23,6 +32,9 @@ class EncountersController < ApplicationController
     @encounter = Encounter.create(encounters_params)
 
     if @encounter.valid?
+      if logged_in?
+        @encounter.user = current_user
+      end
       redirect_to @encounter
     else
       flash[:errors] = @encounter.errors.full_messages
