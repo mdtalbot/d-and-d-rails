@@ -3,6 +3,16 @@ class MonstersController < ApplicationController
     @monsters = Monster.all
   end
 
+  def search
+    find_monster_by_name
+    if @monsters.length > 0
+      render :index
+    else
+      flash[:errors] = "That monster does not exist."
+      redirect_to monsters_path
+    end
+  end
+
   def new
     @monster = Monster.new
   end
@@ -49,6 +59,10 @@ class MonstersController < ApplicationController
 
   def find_monster_by_id
     @monster = Monster.find(params[:id])
+  end
+
+  def find_monster_by_name
+    @monsters = Monster.where(Monster.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 
 end

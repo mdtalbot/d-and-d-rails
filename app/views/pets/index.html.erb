@@ -1,8 +1,10 @@
 <h1>Current Pets:</h1>
-<br></br>
-
 <%= flash[:notice] if flash[:notice] %>
+<br></br>
 <br>
+<%= render "search" %>
+<p class="errors"><%= flash[:errors] if flash[:errors] %></p>
+
 
 <% @pets.each do |pet| %>
 <h3><%= link_to pet.name, pet_path(pet) %></h3>

@@ -1,10 +1,11 @@
 <h1>Current Characters:</h1>
-<%= render "heading" %>
-<br><br>
-
 <%= flash[:notice] if flash[:notice] %>
 <br>
-
+<%= render "heading" %>
+<br><br>
+<br>
+<%= render "search" %>
+<p class="errors"><%= flash[:errors] if flash[:errors] %></p>
 <ul>
   <% @characters.each do |character| %>
     <li><%= link_to character.name, character_path(character) %></li>

@@ -3,6 +3,16 @@ class PetsController < ApplicationController
     @pets = Pet.all
   end
 
+  def search
+    find_pet_by_name
+    if @pets.length > 0
+      render :index
+    else
+      flash[:errors] = "That pet does not exist."
+      redirect_to pets_path
+    end
+  end
+
   def new
     @pet = Pet.new
     @characters = Character.all
@@ -51,5 +61,9 @@ class PetsController < ApplicationController
 
   def find_pet_by_id
     @pet = Pet.find(params[:id])
+  end
+
+  def find_pet_by_name
+    @pets = Pet.where(Pet.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 end

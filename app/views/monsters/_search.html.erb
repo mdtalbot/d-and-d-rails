@@ -1,0 +1,5 @@
+<%= form_tag monsters_search_path, :method => :get do %>
+  <%= label_tag(:search_term, "Search Monsters:") %>
+  <%= text_field_tag :search_term %>
+  <%= submit_tag 'Search Monsters' %>
+<% end %>

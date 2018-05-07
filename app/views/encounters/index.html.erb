@@ -1,9 +1,12 @@
 <h1>Current Encounters:</h1>
-<%= render "heading" %>
-<br></br>
-
 <%= flash[:notice] if flash[:notice] %>
 <br>
+<%= render "heading" %>
+<br>
+<br>
+<br>
+<%= render "search" %>
+<p class="errors"><%= flash[:errors] if flash[:errors] %></p>
 
 <ul>
   <% @encounters.each do |encounter| %>
