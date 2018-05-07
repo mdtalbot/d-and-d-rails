@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_200147) do
+ActiveRecord::Schema.define(version: 2018_05_07_212405) do
+
+  create_table "char_classes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "char_races", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "character_encounters", force: :cascade do |t|
     t.integer "character_id"
@@ -29,6 +43,8 @@ ActiveRecord::Schema.define(version: 2018_05_07_200147) do
     t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "char_class_id"
+    t.integer "char_race_id"
     t.integer "user_id"
   end
 
@@ -50,7 +66,21 @@ ActiveRecord::Schema.define(version: 2018_05_07_200147) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "size"
     t.integer "hit_points"
+    t.integer "challenge_rating"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "armor_class"
+    t.integer "constitution_save"
+    t.integer "intelligence_save"
+    t.integer "wisdom_save"
+    t.integer "history"
+    t.integer "perception"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

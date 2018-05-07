@@ -54,7 +54,7 @@ class MonstersController < ApplicationController
   private
 
   def monster_params
-    params.require(:monster).permit(:name, :description, :hit_points)
+    params.require(:monster).permit(:name, :description, :hit_points, :size, :challenge_rating, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :armor_class, :constitution_save, :wisdom_save, :intelligence_save, :history, :perception)
   end
 
   def find_monster_by_id

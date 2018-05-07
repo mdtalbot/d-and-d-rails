@@ -59,7 +59,7 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:name, :strength, :dexterity, :consitution, :intelligence, :wisdom, :charisma)
+    params.require(:character).permit(:name, :char_class_id, :char_race_id, :strength, :dexterity, :consitution, :intelligence, :wisdom, :charisma)
   end
 
   def find_character_by_id
