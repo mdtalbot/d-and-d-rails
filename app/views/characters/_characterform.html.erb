@@ -1,34 +1,36 @@
 <%= form_for @character do |f| %>
-<br><br>
-<img class="character_name" src = "/../assets/character_name_top.png">
-<br>
-<%= f.text_field :name, class: "character_name" %>
-<br>
-<img class= "character_name" src = "/../assets/character_name_bottom.png" >
-<br>
-<%= f.label :strength %>
-<br>
-<%= f.number_field :strength %>
-<br><br><br>
-<%= f.label :dexterity %>
-<br>
-<%= f.number_field :dexterity %>
-<br><br><br>
-<%= f.label "Constitution" %>
-<br>
-<%= f.number_field :consitution %>
-<br><br><br>
-<%= f.label :intelligence %>
-<br>
-<%= f.number_field :intelligence %>
-<br><br><br>
-<%= f.label :wisdom %>
-<br>
-<%= f.number_field :wisdom %>
-<br><br><br>
-<%= f.label :charisma %>
-<br>
-<%= f.number_field :charisma %>
-<br><br><br>
-<%= f.submit %>
+  <br></br>
+  <img class="character_name" src = "/../assets/character_name_top.png">
+    <br>
+  <%= f.text_field :name, class: "character_name" %>
+    <br>
+  <img class= "character_name" src = "/../assets/character_name_bottom.png" >
+    <br>
+  <%= f.label :strength %>
+    <br>
+  <%= f.number_field :strength %>
+    <br><br><br>
+  <%= f.label :dexterity %>
+    <br>
+  <%= f.number_field :dexterity %>
+    <br><br><br>
+  <%= f.label "Constitution" %>
+    <br>
+  <%= f.number_field :consitution %>
+    <br><br><br>
+  <%= f.label :intelligence %>
+    <br>
+  <%= f.number_field :intelligence %>
+    <br><br><br>
+  <%= f.label :wisdom %>
+    <br>
+  <%= f.number_field :wisdom %>
+    <br><br><br>
+  <%= f.label :charisma %>
+    <br>
+  <%= f.number_field :charisma %>
+    <br><br><br>
+  <%= f.submit %>
 <% end %>
+
+<h3><%= link_to "Back to Homepage", home_path %></h3>

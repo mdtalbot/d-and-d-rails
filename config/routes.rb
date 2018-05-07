@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#home'
+  root 'application#home', as: 'home'
 
   resources :character_encounters
   resources :monster_encounters
