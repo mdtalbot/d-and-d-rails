@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_184347) do
+ActiveRecord::Schema.define(version: 2018_05_07_200147) do
 
   create_table "character_encounters", force: :cascade do |t|
     t.integer "character_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_184347) do
     t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "encounters", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_184347) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "monster_encounters", force: :cascade do |t|
@@ -57,6 +59,13 @@ ActiveRecord::Schema.define(version: 2018_05_03_184347) do
     t.string "name"
     t.string "description"
     t.integer "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
