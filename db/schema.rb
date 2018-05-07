@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 2018_05_07_212405) do
     t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.integer "char_class_id"
     t.integer "char_race_id"
-    t.integer "user_id"
   end
 
   create_table "encounters", force: :cascade do |t|

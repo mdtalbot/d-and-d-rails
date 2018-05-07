@@ -5,6 +5,7 @@ class EncountersController < ApplicationController
 
   def my_encounters
     if logged_in?
+      # byebug
       @encounters = current_user.encounters
       render :index
     else
@@ -33,7 +34,7 @@ class EncountersController < ApplicationController
 
     if @encounter.valid?
       if logged_in?
-        @encounter.user = current_user
+        @encounter.update(user_id: current_user.id)
       end
       redirect_to @encounter
     else
