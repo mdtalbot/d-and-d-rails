@@ -1,7 +1,9 @@
+<h1>Current Characters:</h1>
 <%= render "heading" %>
-<h1>Characters:</h1>
+<br><br>
 
 <%= flash[:notice] if flash[:notice] %>
+<br>
 
 <ul>
   <% @characters.each do |character| %>
@@ -17,4 +19,4 @@
 
 <h3><%= link_to "Create New Character", new_character_path %><h3>
 
-<h3><%= link_to "Back to Homepage", home_path %></h3>
+<h3><%= link_to "Back to Homepage", root_path %></h3>
