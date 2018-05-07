@@ -3,6 +3,16 @@ class CharactersController < ApplicationController
     @characters = Character.all
   end
 
+  def search
+    find_character_by_name
+    if @characters.length > 0
+      render :index
+    else
+      flash[:errors] = "That character does not exist."
+      redirect_to characters_path
+    end
+  end
+
   def new
     @character = Character.new
   end
@@ -54,5 +64,9 @@ class CharactersController < ApplicationController
 
   def find_character_by_id
     @character = Character.find(params[:id])
+  end
+
+  def find_character_by_name
+    @characters = Character.where(Character.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 end
