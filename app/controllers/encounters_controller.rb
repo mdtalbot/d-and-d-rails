@@ -33,7 +33,7 @@ class EncountersController < ApplicationController
   def update
     find_encounter_by_id # Sets encounter to @encounter
     @encounter.update(encounters_params)
-    
+
     redirect_to @encounter
   end
 
@@ -48,7 +48,7 @@ class EncountersController < ApplicationController
   private
 
   def encounters_params
-    params.require(:encounter).permit(:name, :content, :monster_id, :character_id)
+    params.require(:encounter).permit(:name, :content, monster_ids: [], character_ids: [])
   end
 
   def find_encounter_by_id

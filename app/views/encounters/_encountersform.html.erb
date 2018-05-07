@@ -9,11 +9,11 @@
   <br>
   <%= f.label "Monster" %>
   <br>
-  <%= f.collection_check_boxes :monster_id, @monsters, :id, :name %>
+  <%= f.collection_check_boxes :monster_ids, @monsters, :id, :name %>
   <br><br>
   <%= f.label "Character" %>
   <br>
-  <%= f.collection_check_boxes :character_id, @characters, :id, :name %>
+  <%= f.collection_check_boxes :character_ids, @characters, :id, :name %>
   <br><br><br>
   <%= f.submit %>
 <% end %>

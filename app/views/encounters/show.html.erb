@@ -6,6 +6,12 @@
     <li><%= character.name %></li>
   <% end %>
 </ul>
+<p>vs.</p>
+<ul>
+  <% @encounter.monsters.each do |monster| %>
+    <li><%= monster.name %></li>
+  <% end %>
+</ul>
 
 
 <h3><%= link_to "Edit", edit_encounter_path(@encounter) %><br></h3>

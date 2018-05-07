@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 2018_05_03_184347) do
   create_table "encounters", force: :cascade do |t|
     t.string "name"
     t.string "content"
-    t.integer "monster_id"
-    t.integer "character_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
