@@ -1,12 +1,17 @@
 <%= form_for @monster do |f| %>
-<%= f.label :name %><br>
-<%= f.text_field :name, class: "monster_name" %><br><br>
-<%= f.label :description %>
-<br>
-<%= f.text_area :description, class:"monster_description" %><br>
-<br>
-<%= f.label :hit_points %><br>
-<%= f.number_field :hit_points %>
-<br><br><br>
-<%= f.submit %>
+  <%= f.label :name %>
+    <br>
+  <%= f.text_field :name, class: "monster_name" %>
+    <br><br>
+  <%= f.label :description %>
+    <br>
+  <%= f.text_area :description, class:"monster_description" %>
+    <br><br>
+  <%= f.label :hit_points %>
+    <br>
+  <%= f.number_field :hit_points %>
+    <br><br><br>
+  <%= f.submit %>
 <% end %>
+
+<h3><%= link_to "Back to Homepage", root_path %></h3>
