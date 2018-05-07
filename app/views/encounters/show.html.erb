@@ -1,9 +1,10 @@
 <h1><%= @encounter.name %></h1>
 <p><%= @encounter.content %></p>
+
 <ul>
-<% @encounter.characters.each do |character| %>
-<li><%= character.name %></li>
-<% end %>
+  <% @encounter.characters.each do |character| %>
+    <li><%= character.name %></li>
+  <% end %>
 </ul>
 
 
@@ -11,5 +12,5 @@
 <h3><%= link_to "Return to All Encounters", encounters_path %></h3>
 
 <%= form_tag @encounter, method: "DELETE" do %>
-  <%= submit_tag "Delete This Encounter" %>
+  <%= submit_tag "Delete This Encounter", :onclick => "return confirm('Really delete this encounter?')" %>
 <% end %>

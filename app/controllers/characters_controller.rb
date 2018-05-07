@@ -8,36 +8,41 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find(params[:id])
+    find_character_by_id #Assigns character to @character
   end
 
   def edit
-    @character = Character.find(params[:id])
+    find_character_by_id #Assigns character to @character
   end
 
   def create
-    @character = Character.new(character_params)
+    @character = Character.create(character_params)
+
     if @character.valid?
-      @character.save
       redirect_to characters_path
     else
       flash[:errors] = @character.errors.full_messages
       redirect_to new_character_path
     end
+
   end
 
   def update
-    @character = Character.find(params[:id])
+    find_character_by_id #Assigns character to @character
+
     if @character.update(character_params)
       redirect_to characters_path
     else
       flash[:errors] = @character.errors.full_messages
+      redirect_to edit_character_path
     end
   end
 
   def destroy
-    @character = Character.find(params[:id])
+    find_character_by_id #Assigns character to @character
     @character.destroy
+    flash[:notice] = "Character Deleted."
+
     redirect_to characters_path
   end
 
@@ -45,5 +50,9 @@ class CharactersController < ApplicationController
 
   def character_params
     params.require(:character).permit(:name, :strength, :dexterity, :consitution, :intelligence, :wisdom, :charisma)
+  end
+
+  def find_character_by_id
+    @character = Character.find(params[:id])
   end
 end

@@ -1,19 +1,19 @@
 <%= form_for @encounter do |f| %>
-<%= f.label :name %>
-<br><br>
-<%= f.text_field :name %>
-<br><br><br>
-<%= f.label :content %>
-<br>
-<%= f.text_area :content %>
-<br>
-<%= f.label "Monster" %>
-<br>
-<%= f.collection_check_boxes :monster_id, @monster, :id, :name %>
-<br><br>
-<%= f.label "Character" %>
-<br>
-<%= f.collection_check_boxes :character_id, @character, :id, :name %>
-<br><br><br>
-<%= f.submit %>
+  <%= f.label :name %>
+  <br><br>
+  <%= f.text_field :name %>
+  <br><br><br>
+  <%= f.label :content %>
+  <br>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.label "Monster" %>
+  <br>
+  <%= f.collection_check_boxes :monster_id, @monsters, :id, :name %>
+  <br><br>
+  <%= f.label "Character" %>
+  <br>
+  <%= f.collection_check_boxes :character_id, @characters, :id, :name %>
+  <br><br><br>
+  <%= f.submit %>
 <% end %>

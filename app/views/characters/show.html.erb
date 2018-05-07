@@ -18,5 +18,5 @@
 <h3><%= link_to "Return to All Characters", characters_path %><br>
 
 <%= form_tag @character, method: "DELETE" do %>
-  <%= submit_tag "Delete this character" %>
+  <%= submit_tag "Delete this character", :onclick => "return confirm('Really delete this Character???')" %>
 <% end %>

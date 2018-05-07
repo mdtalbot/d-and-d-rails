@@ -1,5 +1,10 @@
 <h1>Current Monsters:</h1>
 <%= render "heading" %>
+<br></br>
+
+<%= flash[:notice] if flash[:notice] %>
+<br>
+
 <ul>
 <% @monsters.each do |monster| %>
 <li><%= link_to monster.name, monster_path(monster) %></li>

@@ -1,9 +1,14 @@
 <h1>Current Encounters:</h1>
 <%= render "heading" %>
+<br></br>
+
+<%= flash[:notice] if flash[:notice] %>
+<br>
+
 <ul>
-<% @encounters.each do |encounter| %>
-<li><%= link_to encounter.name, encounter_path(encounter) %></li><br>
-<% end %>
+  <% @encounters.each do |encounter| %>
+    <li><%= link_to encounter.name, encounter_path(encounter) %></li><br>
+  <% end %>
 </ul>
 
 <h3><%= link_to "Create New Encounter", new_encounter_path %></h3>

@@ -8,10 +8,9 @@ class MonstersController < ApplicationController
   end
 
   def create
-    @monster = Monster.new(monster_params)
+    @monster = Monster.create(monster_params)
     if @monster.valid?
-      @monster.save
-      redirect_to monster_path(@monster)
+      redirect_to @monster
     else
       flash[:errors] = @monster.errors.full_messages
       redirect_to new_monster_path
@@ -20,22 +19,25 @@ class MonstersController < ApplicationController
   end
 
   def show
-    @monster = Monster.find(params[:id])
+    find_monster_by_id # Assigns monster to @monster
   end
 
   def edit
-    @monster = Monster.find(params[:id])
+    find_monster_by_id # Assigns monster to @monster
   end
 
   def update
-    @monster = Monster.find(params[:id])
+    find_monster_by_id # Assigns monster to @monster
     @monster.update(monster_params)
+
     redirect_to monster_path
   end
 
   def destroy
-    @monster = Monster.find(params[:id])
+    find_monster_by_id # Assigns monster to @monster
     @monster.delete
+    flash[:notice] = "Monster Deleted."
+
     redirect_to monsters_path
   end
 
@@ -44,4 +46,9 @@ class MonstersController < ApplicationController
   def monster_params
     params.require(:monster).permit(:name, :description, :hit_points)
   end
+
+  def find_monster_by_id
+    @monster = Monster.find(params[:id])
+  end
+
 end

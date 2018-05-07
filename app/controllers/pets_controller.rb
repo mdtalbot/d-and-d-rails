@@ -9,9 +9,8 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new(pet_params)
+    @pet = Pet.create(pet_params)
     if @pet.valid?
-      @pet.save
       redirect_to pet_path(@pet)
     else
       flash[:errors] = @pet.errors.full_messages
@@ -20,14 +19,14 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pet = Pet.find(params[:id])
+    find_pet_by_id # Assigns pet to @pet
   end
 
   def edit
   end
 
   def update
-    @pet = Pet.find(params[:id])
+    find_pet_by_id # Assigns pet to @pet
     if @pet.update(pet_params)
       redirect_to pet_path(@pet)
     else
@@ -37,8 +36,10 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    @pet = Pet.find(params[:id])
+    find_pet_by_id # Assigns pet to @pet
     @pet.destroy
+    flash[:notice] = "Pet Deleted."
+
     redirect_to pets_path
   end
 
@@ -46,5 +47,9 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :description, :character_id)
+  end
+
+  def find_pet_by_id
+    @pet = Pet.find(params[:id])
   end
 end

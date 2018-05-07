@@ -5,15 +5,15 @@ class EncountersController < ApplicationController
 
   def new
     @encounter = Encounter.new
-    @monster = Monster.all
-    @character = Character.all
+    @monsters = Monster.all
+    @characters = Character.all
   end
 
   def create
-    @encounter = Encounter.new(encounters_params)
+    @encounter = Encounter.create(encounters_params)
+
     if @encounter.valid?
-      @encounter.save
-      redirect_to encounter_path(@encounter)
+      redirect_to @encounter
     else
       flash[:errors] = @encounter.errors.full_messages
       redirect_to new_encounter_path
@@ -21,25 +21,27 @@ class EncountersController < ApplicationController
   end
 
   def show
-    @encounter = Encounter.find(params[:id])
+    find_encounter_by_id # Sets encounter to @encounter
   end
 
   def edit
-    @encounter = Encounter.find(params[:id])
-    @monster = Monster.all
-    @character = Character.all
+    find_encounter_by_id # Sets encounter to @encounter
+    @monsters = Monster.all
+    @characters = Character.all
   end
 
   def update
-    @encounter = Encounter.find(params[:id])
+    find_encounter_by_id # Sets encounter to @encounter
     @encounter.update(encounters_params)
-    redirect_to encounter_path(@encounter)
+    
+    redirect_to @encounter
   end
 
   def destroy
-    @encounter = Encounter.find(params[:id])
+    find_encounter_by_id # Sets encounter to @encounter
     @encounter.destroy
     flash[:notice] = "Encounter Deleted."
+
     redirect_to encounters_path
   end
 
@@ -47,6 +49,10 @@ class EncountersController < ApplicationController
 
   def encounters_params
     params.require(:encounter).permit(:name, :content, :monster_id, :character_id)
+  end
+
+  def find_encounter_by_id
+    @encounter = Encounter.find(params[:id])
   end
 
 end

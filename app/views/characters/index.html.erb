@@ -1,5 +1,9 @@
 <%= render "heading" %>
 <h1>Characters:</h1>
+<br></br>
+
+<%= flash[:notice] if flash[:notice] %>
+<br>
 
 <ul>
 <% @characters.each do |character| %>
