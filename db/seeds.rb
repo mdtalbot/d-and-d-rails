@@ -30,3 +30,52 @@ CharRace.create(name: "Halfling", description: "The diminutive halflings survive
 CharRace.create(name: "Half-Orc", description: "Half-orcs’ grayish pigmentation, sloping foreheads, jutting jaws, prominent teeth, and towering builds make their orcish heritage plain for all to see.")
 CharRace.create(name: "Human", description: "Humans are the most adaptable and ambitious people among the common races. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.")
 CharRace.create(name: "Tiefling", description: "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.")
+
+def monster_parsing
+all_monster_data = RestClient.get("http://www.dnd5eapi.co/api/monsters")
+parsed_monster_data = JSON.parse(all_monster_data)
+parsed_monster_data
+end
+
+def monsters_object
+  monster_parsing["results"]
+end
+
+def monster_info
+  monster_info_hash={}
+  monster_info_hashes = monsters_object.map do |monster_obj|
+    monsters_data = RestClient.get(monster_obj["url"])
+    cleaned_monster_data = JSON.parse(monsters_data)
+    monster_info_hash[cleaned_monster_data["name"]] = cleaned_monster_data
+  end
+  monster_info_hash
+end
+
+def create_new_monster
+  monster_info.each do |monster_key, monster_val|
+
+    Monster.create(
+    name: monster_key,
+    hit_points: monster_val["hit_points"],
+    size: monster_val["size"],
+    description: monster_val["type"],
+    challenge_rating: monster_val["challenge_rating"],
+    armor_class: monster_val["armor_class"],
+    strength: monster_val["strength"],
+    dexterity: monster_val["dexterity"],
+    constitution: monster_val["constitution"],
+    intelligence: monster_val["intelligence"],
+    wisdom: monster_val["wisdom"],
+    charisma: monster_val["charisma"],
+    constitution_save: monster_val["constitution_save"],
+    intelligence_save: monster_val["intelligence_save"],
+    wisdom_save: monster_val["wisdom_save"],
+    history: monster_val["history"],
+    perception: monster_val["perception"],
+    )
+
+  end
+
+end
+
+create_new_monster
