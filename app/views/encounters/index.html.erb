@@ -1,14 +1,19 @@
 <h1>Current Encounters:</h1>
-<%= render "heading" %>
-<br></br>
-
 <%= flash[:notice] if flash[:notice] %>
+<p class="errors"><%= flash[:errors] if flash[:errors] %></p>
 <br>
+<%= render "heading" %>
+<br>
+<br>
+<br>
+<%= render "search" %>
 
 <ul>
   <% @encounters.each do |encounter| %>
     <li><%= link_to encounter.name, encounter_path(encounter) %></li><br>
   <% end %>
 </ul>
+
+<%= button_to "Return to All Encounters", encounters_path, :method => "get" %>
 
 <h3><%= link_to "Create New Encounter", new_encounter_path %></h3>

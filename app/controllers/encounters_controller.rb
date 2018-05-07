@@ -3,6 +3,16 @@ class EncountersController < ApplicationController
     @encounters = Encounter.all
   end
 
+  def search
+    find_encounter_by_name
+    if @encounters.length > 0
+      render :index
+    else
+      flash[:errors] = "That encounter does not exist."
+      redirect_to encounters_path
+    end
+  end
+
   def new
     @encounter = Encounter.new
     @monsters = Monster.all
@@ -53,6 +63,10 @@ class EncountersController < ApplicationController
 
   def find_encounter_by_id
     @encounter = Encounter.find(params[:id])
+  end
+
+  def find_encounter_by_name
+    @encounters = Encounter.where(Encounter.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 
 end
