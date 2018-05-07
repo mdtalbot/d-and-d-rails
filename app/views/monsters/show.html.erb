@@ -1,11 +1,26 @@
 <h1><%= @monster.name %></h1>
-<span><b>Description:</b> <em><%= @monster.description %></em></span>
+<span><b>Description:</b> <em><%= @monster.description %></em></span></br>
+<span><b>Challenge Rating:</b> <em><%= @monster.challenge_rating %></em></span></br>
+<span><b>Armor Class:</b> <em><%= @monster.armor_class %></em></span></br>
+<span><b>Hit Points:</b> <em><%= @monster.hit_points %></em></span></br></br>
 <ul>
-  <li><b>Hit Points:</b> <em><%= @monster.hit_points %></em></li>
+  <li><b>Size:</b> <em><%= @monster.size %></em></li>
+  <li><b>Strength:</b> <em><%= @monster.strength %></em></li>
+  <li><b>Dexterity:</b> <em><%= @monster.dexterity %></em></li>
+  <li><b>Constitution:</b> <em><%= @monster.constitution %></em></li>
+  <li><b>Intelligence:</b> <em><%= @monster.intelligence %></em></li>
+  <li><b>Wisdom:</b> <em><%= @monster.wisdom %></em></li>
+  <li><b>Charisma:</b> <em><%= @monster.charisma %></em></li>
+  <li><b>Constituion Saving Throw:</b> <em><%= @monster.constitution_save %></em></li>
+  <li><b>Intelligence Saving Throw:</b> <em><%= @monster.intelligence_save %></em></li>
+  <li><b>Wisdom Saving Throw:</b> <em><%= @monster.wisdom_save %></em></li>
+  <li><b>History:</b> <em><%= @monster.history %></em></li>
+  <li><b>Perception:</b> <em><%= @monster.perception %></em></li>
 </ul>
-<%= link_to "Return to All Monsters", monsters_path %>
-<%= link_to "Edit Monster", edit_monster_path(@monster) %>
-<br><br>
+<br>
+<%= button_to "Edit Monster", edit_monster_path(@monster), {method: :get} %><br>
 <%= form_tag @monster, method: "DELETE" do %>
   <%= submit_tag "Delete This Monster" %>
 <% end %>
+<br>
+<%= button_to "<< Return to All Monsters", monsters_path, {method: :get} %><br>

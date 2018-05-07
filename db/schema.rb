@@ -48,7 +48,21 @@ ActiveRecord::Schema.define(version: 2018_05_03_184347) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "size"
     t.integer "hit_points"
+    t.integer "challenge_rating"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "armor_class"
+    t.integer "constitution_save"
+    t.integer "intelligence_save"
+    t.integer "wisdom_save"
+    t.integer "history"
+    t.integer "perception"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
