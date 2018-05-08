@@ -9,7 +9,10 @@
 <%= form_for @user do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
-  
+
+  <%= f.label :email_address %>
+  <%= f.text_field :email_address %>
+
   <%= f.label :password %>
   <%= f.password_field :password %>
 

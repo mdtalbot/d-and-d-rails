@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'sessions'
   post '/logout', to: 'sessions#destroy'
-  get '/users/:id/encounters', to: 'users#encounters', as: 'my_encounters'
+  get '/users/:id/encounters', to: 'users#encounters_index', as: 'my_encounters'
+  get '/users/:id/encounters/:encounter_id', to: 'users#encounter_show', as: 'my_encounter'
 
 end

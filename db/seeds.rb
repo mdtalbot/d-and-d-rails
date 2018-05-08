@@ -1,5 +1,5 @@
 #Sample User for testing
-User.create(username: 'lane', password: 'pass', password_confirmation: 'pass')
+User.create(username: 'lane', email_address: "lane.miller.biz@gmail.com", password: 'pass', password_confirmation: 'pass')
 
 # Monster.create(name: "Gerblin", description: "A short, green creature. Looks like Common and sounds like Kelsey Grammar.", hit_points: 10)
 # Monster.create(name: "Eldritch ginuea pig", description: "An incombrehensible horror often eaten as a snack in Peru.", hit_points: 50)
@@ -47,6 +47,7 @@ Alignment.create(name: "Chaotic Evil", description: "Chaotic evil (CE) creatures
 #Sample character seeds
 Character.create(name: "Greg the Old", strength: 14, dexterity: 12, consitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 8, alignment_id: 5)
 Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, consitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12, alignment_id: 3)
+
 
 def monster_parsing
 all_monster_data = RestClient.get("http://www.dnd5eapi.co/api/monsters")
@@ -96,3 +97,7 @@ def create_new_monster
 end
 
 create_new_monster
+
+#Sample Encounter seeds
+Encounter.create(name: "Everybody's Encounter", content: "It's for all of us!", monster_ids: ["1", "10", "11"], character_ids: ["1"])
+Encounter.create(name: "Our Fight!", content: "It's for all of us!", monster_ids: ["4", "7", "30"], character_ids: ["1", "2"])

@@ -1,0 +1,23 @@
+<%= flash[:notice] if flash[:notice] %>
+<br>
+<%= render "encounters/heading" %>
+<br>
+<br>
+<br>
+<%= render "encounters/search" %>
+<p class="errors"><%= flash[:errors] if flash[:errors] %></p>
+
+<ul>
+  <% @encounters.each do |encounter| %>
+    <% if @user %>
+      <li><%= link_to encounter.name, my_encounter_path(@user, encounter) %></li><br>
+    <% else %>
+      <li><%= link_to encounter.name, encounter_path(encounter) %></li><br>
+    <% end %>
+  <% end %>
+</ul>
+<br><br>
+
+<%= button_to "Create New Encounter", new_encounter_path, {method: :get} %><br>
+  <br>
+<%= button_to "All Encounters", encounters_path, method: :get %>
