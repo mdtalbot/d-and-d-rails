@@ -1,0 +1,4 @@
+ <% @alignments.each do |alignment| %>
+    <li><%= link_to alignment.name, alignment_path(alignment) %></li><br>
+  <% end %>
+</ul>
