@@ -1,5 +1,9 @@
 <h1><%= @encounter.name %></h1>
+<% if @encounter.user %>
+  <p><%= "Created by: #{@encounter.user.username.capitalize}" %></p>
+<% end %>
 <p><%= @encounter.content %></p>
+
 
 <ul>
   <% @encounter.characters.each do |character| %>

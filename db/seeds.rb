@@ -1,6 +1,8 @@
-#Monster seeds - do we need this anymore now that we have the API data? -MDT
-Monster.create(name: "Gerblin", description: "A short, green creature. Looks like Common and sounds like Kelsey Grammar.", hit_points: 10)
-Monster.create(name: "Eldritch ginuea pig", description: "An incombrehensible horror often eaten as a snack in Peru.", hit_points: 50)
+#Sample User for testing
+User.create(username: 'lane', password: 'pass', password_confirmation: 'pass')
+
+# Monster.create(name: "Gerblin", description: "A short, green creature. Looks like Common and sounds like Kelsey Grammar.", hit_points: 10)
+# Monster.create(name: "Eldritch ginuea pig", description: "An incombrehensible horror often eaten as a snack in Peru.", hit_points: 50)
 
 #Character class seeds
 CharClass.create(name: "Barbarian", description: "A fierce warrior of primitive background who can enter a battle rage.")

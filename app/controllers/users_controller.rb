@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  def encounters
+    find_user_by_id
+    if logged_in?
+      @encounters = @user.encounters
+    else
+      flash[:notice] = "You are not logged in."
+      redirect_to encounters_path
+    end
+  end
+
   def show
     find_user_by_id
   end
@@ -21,13 +31,14 @@ class UsersController < ApplicationController
 
   def edit
     find_user_by_id
+    authorized_for_user(@user)
     @encounters = Encounter.where(user_id: nil).or(Encounter.where(user_id: @user.id))
   end
 
   def update
     find_user_by_id
-    authorized_for_user(@user)
     @user.update(user_params)
+    redirect_to @user
   end
 
   private

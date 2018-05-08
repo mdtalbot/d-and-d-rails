@@ -3,16 +3,6 @@ class EncountersController < ApplicationController
     @encounters = Encounter.all
   end
 
-  def my_encounters
-    if logged_in?
-      # byebug
-      @encounters = current_user.encounters
-      render :index
-    else
-      redirect_to encounters_path
-    end
-  end
-
   def search
     find_encounter_by_name
     if @encounters.length > 0

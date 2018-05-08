@@ -10,17 +10,19 @@
   <%= f.label "Monsters:" %>
 
   <%= f.collection_check_boxes :monster_ids, @monsters, :id, :name %>
-  <%= button_to "Browse All Monsters", monsters_path, {method: :get} %><br>
 
     <br><br>
 
   <%= f.label "Characters:" %>
 
   <%= f.collection_check_boxes :character_ids, @characters, :id, :name %>
-  <%= button_to "Browse All Characters", characters_path, {method: :get} %><br>
 
     <br></br>
-  <%= f.submit %>
+    <%= f.submit %>
 <% end %>
-
+  <br>
+<%= button_to "Browse All Monsters", monsters_path, method: :get %><br>
+  <br>
+<%= button_to "Browse All Characters", characters_path, method: :get %><br>
+  <br>
 <%= button_to "Back to Homepage", root_path, {method: :get} %><br>
