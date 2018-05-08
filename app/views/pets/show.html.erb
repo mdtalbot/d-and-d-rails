@@ -4,7 +4,7 @@
 <!-- t.string "description"
 t.integer "character_id" -->
 
-<%= link_to "Return to All Pets", pets_path %>
+<%= button_to "<< Return to All Pets", pets_path, {method: :get} %><br>
 
 <%= form_tag @pet, method: "DELETE" do %>
   <%= submit_tag "Delete This Pet" %>
