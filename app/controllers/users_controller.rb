@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def encounters_index
-    find_user_by_id
+    set_user_by_current_user
     if logged_in?
       @encounters = @user.encounters
     else
@@ -11,12 +11,12 @@ class UsersController < ApplicationController
   end
 
   def encounter_show
-    find_user_by_id
+    set_user_by_current_user
     @encounter = Encounter.find(params[:encounter_id])
   end
 
   def characters_index
-    find_user_by_id
+    set_user_by_current_user
     if logged_in?
       @characters = @user.characters
     else
@@ -26,8 +26,23 @@ class UsersController < ApplicationController
   end
 
   def character_show
-    find_user_by_id
+    set_user_by_current_user
     @character = Character.find(params[:character_id])
+  end
+
+  def monsters_index
+    set_user_by_current_user
+    if logged_in?
+      @monsters = @user.monsters
+    else
+      flash[:notice] = "You are not logged in."
+      redirect_to monsters_path
+    end
+  end
+
+  def monster_show
+    set_user_by_current_user
+    @monster = Monster.find(params[:monster_id])
   end
 
   def show
@@ -52,8 +67,11 @@ class UsersController < ApplicationController
 
   def edit
     find_user_by_id
-    authorized_for_user(@user)
-    @encounters = Encounter.where(user_id: nil).or(Encounter.where(user_id: @user.id))
+    if !authorized_for_user(@user)
+      redirect_to current_user
+    else
+      @encounters = Encounter.where(user_id: nil).or(Encounter.where(user_id: @user.id))
+    end
   end
 
   def update
@@ -70,5 +88,9 @@ class UsersController < ApplicationController
 
   def find_user_by_id
     @user = User.find(params[:id])
+  end
+
+  def set_user_by_current_user
+    @user = current_user
   end
 end
