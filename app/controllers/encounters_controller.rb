@@ -80,4 +80,5 @@ class EncountersController < ApplicationController
     @encounters = Encounter.where(Encounter.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 
+
 end
