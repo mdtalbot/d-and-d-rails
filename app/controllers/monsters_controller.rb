@@ -19,8 +19,12 @@ class MonstersController < ApplicationController
 
   def create
     @monster = Monster.create(monster_params)
-    if @monster.valid?
-      redirect_to @monster
+
+    if @monster.valid? && logged_in?
+      @monster.update(user_id: current_user.id)
+      redirect_to my_monster_path(current_user.id, @monster)
+    elsif @monster.valid?
+      redirect_to monster_path(@monster)
     else
       flash[:errors] = @monster.errors.full_messages
       redirect_to new_monster_path
@@ -45,10 +49,14 @@ class MonstersController < ApplicationController
 
   def destroy
     find_monster_by_id # Assigns monster to @monster
-    @monster.delete
-    flash[:notice] = "Monster Deleted."
-
-    redirect_to monsters_path
+    if @monster.user == current_user && logged_in?
+      @monster.delete
+      flash[:notice] = "Monster Deleted."
+      redirect_to my_monsters_path
+    else
+      flash[:notice] = "You are not authorized to delete that item."
+      redirect_to monsters_path
+    end
   end
 
   private

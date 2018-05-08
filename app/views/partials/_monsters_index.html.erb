@@ -1,0 +1,20 @@
+<%= flash[:notice] if flash[:notice] %>
+<br>
+<%= render "monsters/heading" %>
+<br>
+<br>
+<br>
+<%= render "monsters/search" %>
+<p class="errors"><%= flash[:errors] if flash[:errors] %></p>
+
+<br>
+
+<ul>
+<% @monsters.each do |monster| %>
+<li class= "monster"><%= link_to monster.name, monster_path(monster) %><%= " (#{monster.description})" %></li>
+<% end %>
+</ul>
+<br><br>
+
+<%= button_to "Create New Monster", new_monster_path, {method: :get} %><br>
+<%= button_to "<< Back to Homepage", root_path, {method: :get} %>
