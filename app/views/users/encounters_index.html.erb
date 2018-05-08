@@ -8,8 +8,8 @@
 
 <ul>
   <% @encounters.each do |encounter| %>
-    <li><%= link_to encounter.name, encounter_path(encounter) %></li><br>
-  <% end %>
+    <li><%= link_to encounter.name, my_encounter_path(@user, encounter) %></li><br>
+  <% end %> 
 </ul>
 <br><br>
 
