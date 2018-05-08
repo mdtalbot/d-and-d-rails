@@ -17,6 +17,7 @@ class CharactersController < ApplicationController
     @character = Character.new
     @char_races = CharRace.all
     @char_classes = CharClass.all
+    @alignments = Alignment.all
   end
 
   def show
