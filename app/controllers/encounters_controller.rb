@@ -26,6 +26,9 @@ class EncountersController < ApplicationController
 
   def create
     @encounter = Encounter.create(encounters_params)
+    byebug
+    #TESTING NEXT LINE
+    challenge_sum(encounters_params)
 
     if @encounter.valid? && logged_in?
       @encounter.update(user_id: current_user.id)
@@ -88,6 +91,31 @@ class EncountersController < ApplicationController
 
   def find_encounter_by_name
     @encounters = Encounter.where(Encounter.arel_table[:name].lower.matches(params[:search_term].downcase))
+  end
+
+  def challenge_sum(encounters_params)
+    sum = 0
+    monster_objs = Monster.where(id: encounters_params[:monster_ids])
+    monster_objs.each do |monster|
+      monster.each do |stats|
+       sum += stats[:challenge_rating]
+      end
+    end
+    sum
+  end
+
+  def player_level_sum(encounters_params)
+    sum = 0
+    char_objs = Character.where(id: encounters_params[:character_ids])
+    char_objs.each do |char|
+      char.each do |stats|
+        sum += stats[:level]
+      end
+    end
+    sum
+  end
+
+  def generate_encounter_monsters(encounters_params)
   end
 
 end
