@@ -1,38 +1,43 @@
 <%= form_for @encounter do |f| %>
   <%= f.label :name %>
-    <br><br>
+    <br>
   <%= f.text_field :name %>
-    <br><br><br>
+    <br><br>
   <%= f.label :content %>
     <br>
-  <%= f.text_area :content %>
+  <%= f.text_area :content, class: "encounter_description" %>
     <br></br>
-  <%= f.label "Very Easy Monsters:" :class => 'submit_class_name_here'%>
-  <%= f.collection_check_boxes :monster_ids, @very_easy_monsters, :id, :name %>
+  <%= f.label "Very Easy Monsters", class: "very_easy_monster_type_titles"%>
+  <%= f.collection_check_boxes :monster_ids, @very_easy_monsters, :id, :name do |b| %>
+    <div class="monster_checkbox_container">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
 
     <br><br>
 
-  <%= f.label "Easy Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.label "Easy Monsters", class: "easy_monster_type_titles"%>
   <%= f.collection_check_boxes :monster_ids, @easy_monsters, :id, :name %>
 
     <br><br>
 
-  <%= f.label "Medium Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.label "Medium Monsters", class: "medium_monster_type_titles"%>
   <%= f.collection_check_boxes :monster_ids, @medium_monsters, :id, :name %>
 
     <br><br>
 
-  <%= f.label "Hard Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.label "Hard Monsters", class: "hard_monster_type_titles"%>
   <%= f.collection_check_boxes :monster_ids, @hard_monsters, :id, :name %>
 
     <br><br>
 
-  <%= f.label "Very Hard Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.label "Very Hard Monsters", class: "very_hard_monster_type_titles"%>
   <%= f.collection_check_boxes :monster_ids, @very_hard_monsters, :id, :name %>
 
     <br><br>
 
-  <%= f.label "Impossible Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.label "Impossible Monsters", class: "impossible_monster_type_titles"%>
   <%= f.collection_check_boxes :monster_ids, @impossible_monsters, :id, :name %>
 
     <br><br>

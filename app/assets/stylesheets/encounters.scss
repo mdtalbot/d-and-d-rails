@@ -10,3 +10,55 @@ form input[type='text'].encounter_name {
 p.errors {
   color: red;
 }
+
+.encounter_description{
+  width: 40%;
+  height: 200px;
+}
+
+.very_easy_monster_type_titles {
+  font-size: 20px;
+  font-style: bold;
+  color: blue;
+  display: block;
+}
+
+.easy_monster_type_titles {
+  font-size: 20px;
+  font-style: bold;
+  color: teal;
+  display: block;
+}
+
+.medium_monster_type_titles {
+  font-size: 20px;
+  font-style: bold;
+  color: green;
+  display: block;
+}
+
+.hard_monster_type_titles {
+  font-size: 20px;
+  font-style: bold;
+  color: yellow;
+  display: block;
+}
+
+.very_hard_monster_type_titles {
+  font-size: 20px;
+  font-style: bold;
+  color: orange;
+  display: block;
+}
+
+.impossible_monster_type_titles {
+  font-size: 20px;
+  font-style: bold;
+  color: red;
+  display: block;
+}
+
+
+.monster_checkbox_container {
+  margin: 5px;
+ }
