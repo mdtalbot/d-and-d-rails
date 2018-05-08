@@ -1,0 +1,4 @@
+  <% @char_races.each do |char_race| %>
+    <li><%= link_to char_race.name, char_race_path(char_race) %></li><br>
+  <% end %>
+</ul>

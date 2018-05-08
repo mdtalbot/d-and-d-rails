@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   resources :character_encounters
   resources :monster_encounters
+  resources :char_class, only: [:index, :show]
+  resources :char_race, only: [:index, :show]
+  resources :alignment, only: [:index, :show]
   get "/pets/search", to: "pets#search", as: "pets_search"
   resources :pets
   get "/characters/search", to: "characters#search", as: "characters_search"
