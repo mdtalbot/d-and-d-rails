@@ -4,6 +4,7 @@ class Character < ApplicationRecord
   has_many :pets
   belongs_to :char_class
   belongs_to :char_race
+  belongs_to :alignment
   belongs_to :user, optional: true
 
   validates :name, :strength, :dexterity, :consitution, :intelligence, :wisdom, :charisma, presence: true
