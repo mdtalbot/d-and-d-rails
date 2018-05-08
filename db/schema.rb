@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2018_05_08_150303) do
     t.integer "perception"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "pets", force: :cascade do |t|
