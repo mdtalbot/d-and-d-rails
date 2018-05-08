@@ -1,6 +1,8 @@
+<%= flash[:notice] if flash[:notice] %>
+
 <h1><%= @character.name %></h1>
 <% if @character.user %>
-  <p><%= "created by: #{@character.user.username}" %></p>
+  <p><%= "created by: #{@character.user.username.capitalize}" %></p>
 <% end %>
 
 <ul>

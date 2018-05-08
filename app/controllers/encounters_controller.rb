@@ -56,10 +56,14 @@ class EncountersController < ApplicationController
 
   def destroy
     find_encounter_by_id # Sets encounter to @encounter
-    @encounter.destroy
-    flash[:notice] = "Encounter Deleted."
-
-    redirect_to encounters_path
+    if @encounter.user == current_user && logged_in?
+      @encounter.destroy
+      flash[:notice] = "Encounter Deleted."
+      redirect_to my_encounters_path
+    else
+      flash[:notice] = "You are not authorized to delete that item."
+      redirect_to encounters_path
+    end
   end
 
   private

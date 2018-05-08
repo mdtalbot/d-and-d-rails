@@ -31,12 +31,11 @@ class CharactersController < ApplicationController
   def create
     @character = Character.create(character_params)
 
-    if @character.valid?
-      if logged_in?
-        @character.update(user_id: current_user.id)
-        redirect_to my_character_path(current_user.id, @character)
-      end
-      redirect_to @character
+    if @character.valid? && logged_in?
+      @character.update(user_id: current_user.id)
+      redirect_to my_character_path(current_user.id, @character)
+    elsif @character.valid?
+      redirect_to character_path(@character)
     else
       flash[:errors] = @character.errors.full_messages
       redirect_to new_character_path
@@ -57,10 +56,14 @@ class CharactersController < ApplicationController
 
   def destroy
     find_character_by_id #Assigns character to @character
-    @character.destroy
-    flash[:notice] = "Character Deleted."
-
-    redirect_to characters_path
+    if @character.user == current_user && logged_in?
+      @character.destroy
+      flash[:notice] = "Character Deleted."
+      redirect_to my_characters_path
+    else
+      flash[:notice] = "You are not authorized to delete that item."
+      redirect_to characters_path
+    end
   end
 
   private
