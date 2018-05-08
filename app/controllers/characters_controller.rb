@@ -56,7 +56,7 @@ class CharactersController < ApplicationController
 
   def destroy
     find_character_by_id #Assigns character to @character
-    if @character.user == current_user && logged_in?
+    if permitted?(@character.user)
       @character.destroy
       flash[:notice] = "Character Deleted."
       redirect_to my_characters_path

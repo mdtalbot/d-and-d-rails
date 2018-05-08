@@ -49,7 +49,7 @@ class MonstersController < ApplicationController
 
   def destroy
     find_monster_by_id # Assigns monster to @monster
-    if @monster.user == current_user && logged_in?
+    if permitted?(@monster.user)
       @monster.delete
       flash[:notice] = "Monster Deleted."
       redirect_to my_monsters_path

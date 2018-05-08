@@ -1,1 +1,12 @@
 <%= render 'partials/encounter_show' %>
+
+<%= button_to "Edit", edit_my_encounter_path, {method: :get} %><br>
+
+<% if logged_in? %>
+  <%= button_to "<< Return to My Encounters", my_encounters_path, {method: :get} %><br>
+<% end %>
+<%= button_to "<< Return to All Encounters", encounters_path, {method: :get} %><br>
+
+<%= form_tag @encounter, method: "DELETE" do %>
+  <%= submit_tag "Delete This Encounter", :onclick => "return confirm('Really delete this encounter?')" %>
+<% end %>

@@ -15,6 +15,22 @@ class UsersController < ApplicationController
     @encounter = Encounter.find(params[:encounter_id])
   end
 
+  def encounter_edit
+    @encounter = Encounter.find(params[:encounter_id])
+    @characters = Character.all
+    very_easy_monsters
+    easy_monsters
+    medium_monsters
+    hard_monsters
+    very_hard_monsters
+    impossible_monsters
+
+    if !permitted?(@encounter.user)
+      flash[:notice] = "You are not authorized to edit this item."
+      redirect_to @encounter
+    end
+  end
+
   def characters_index
     set_user_by_current_user
     if logged_in?

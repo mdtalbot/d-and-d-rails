@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if logged_in?
-      redirect_to encounters_path
-    else
-
+      redirect_to user_path(current_user)
     end
   end
 
