@@ -20,11 +20,9 @@
     <br></br>
     <%= f.submit %>
 <% end %>
-
   <br>
-<%= button_to "Browse All Monsters", monsters_path, method: :get %><br>
+<%= button_to "Browse All Monsters", monsters_path, {method: :get} %><br>
   <br>
-<%= button_to "Browse All Characters", characters_path, method: :get %><br>
+<%= button_to "Browse All Characters", characters_path, {method: :get} %><br>
   <br>
-
 <%= button_to "Back to Homepage", root_path, {method: :get} %><br>
