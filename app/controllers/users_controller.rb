@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def encounters
+  def encounters_index
     find_user_by_id
     if logged_in?
       @encounters = @user.encounters
@@ -8,6 +8,11 @@ class UsersController < ApplicationController
       flash[:notice] = "You are not logged in."
       redirect_to encounters_path
     end
+  end
+
+  def encounter_show
+    find_user_by_id
+    @encounter = Encounter.find(params[:encounter_id])
   end
 
   def show
