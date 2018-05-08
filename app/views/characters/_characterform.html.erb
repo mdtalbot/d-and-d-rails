@@ -6,14 +6,20 @@
     <br>
   <img class= "character_name" src = "/../assets/character_name_bottom.png" >
     <br>
-  <%= f.label "Character Race" %>
-  <%= f.collection_select :char_race, @char_races, :id, :name %>
-  <br><br>
   <%= f.label "Character Class" %>
   <%= f.collection_select :char_class, @char_classes, :id, :name %>
   <br><br>
+  <%= f.label "Character Race" %>
+  <%= f.collection_select :char_race, @char_races, :id, :name %>
+  <br><br>
   <%= f.label "Alignment" %>
   <%= f.collection_select :alignment, @alignments, :id, :name %>
+  <br><br>
+  <%= f.label :level %>
+  <%= f.number_field :level%>
+  <br>
+  <%= f.label :experience %>
+  <%= f.number_field :experience %>
   <br><br>
   <%= f.label :strength %>
     <br>

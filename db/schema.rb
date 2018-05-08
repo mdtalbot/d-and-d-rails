@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_08_141255) do
+ActiveRecord::Schema.define(version: 2018_05_08_145025) do
 
   create_table "alignments", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2018_05_08_141255) do
     t.integer "user_id"
     t.integer "char_race_id"
     t.integer "alignment_id"
+    t.integer "level", default: 1
+    t.integer "experience", default: 0
   end
 
   create_table "encounters", force: :cascade do |t|

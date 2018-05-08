@@ -1,9 +1,8 @@
-Character.create(name: "Greg the Old", strength: 14, dexterity: 12, consitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 8, alignment_id: 5)
-Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, consitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12, alignment_id: 3)
-
+#Monster seeds - do we need this anymore now that we have the API data? -MDT
 Monster.create(name: "Gerblin", description: "A short, green creature. Looks like Common and sounds like Kelsey Grammar.", hit_points: 10)
 Monster.create(name: "Eldritch ginuea pig", description: "An incombrehensible horror often eaten as a snack in Peru.", hit_points: 50)
 
+#Character class seeds
 CharClass.create(name: "Barbarian", description: "A fierce warrior of primitive background who can enter a battle rage.")
 CharClass.create(name: "Bard", description: "An inspiring magician whose music echoes the power of creation.")
 CharClass.create(name: "Cleric", description: "A priestly champion who wields divine magic in service of a higher power.")
@@ -17,6 +16,7 @@ CharClass.create(name: "Sorcerer", description: "A spellcaster who possesses inn
 CharClass.create(name: "Warlock", description: "A wielder of eldritch magic whose powers are derived from a bargain with an extraplanar entity.")
 CharClass.create(name: "Wizard", description: "A scholarly magic-user capable of manipulating the structures of reality.")
 
+#Character race seeds
 CharRace.create(name: "Aarakocra", description: "Sequestered in high mountains atop tall trees, the aarakocra, sometimes called birdfolk, evoke fear and wonder.")
 CharRace.create(name: "Aasimar", description: "Aasimar are placed in the world to serve as guardians of law and good. Their patrons expect them to strike at evil, lead by example, and further the cause of justice.")
 CharRace.create(name: "Dragonborn", description: "Dragonborn look very much like dragons standing erect in humanoid form, though they lack wings or a tail.")
@@ -31,6 +31,7 @@ CharRace.create(name: "Half-Orc", description: "Half-orcs’ grayish pigmentatio
 CharRace.create(name: "Human", description: "Humans are the most adaptable and ambitious people among the common races. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.")
 CharRace.create(name: "Tiefling", description: "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.")
 
+#Alignment seeds
 Alignment.create(name: "Lawful Good", description: "Lawful good (LG) creatures can be counted on to do the right thing as expected by society. Gold dragons, paladins, and most dwarves are lawful good.")
 Alignment.create(name: "Neutral Good", description: "Neutral good (NG) folk do the best they can to help others according to their needs. Many celestials, some cloud giants, and most gnomes are neutral good.")
 Alignment.create(name: "Chaotic Good", description: "Chaotic good (CG) creatures act as their conscience directs, with little regard for what others expect. Copper dragons, many elves, and unicorns are chaotic good.")
@@ -40,6 +41,10 @@ Alignment.create(name: "Chaotic Neutral", description: "Chaotic neutral (CN) cre
 Alignment.create(name: "Lawful Evil", description: "Lawful evil (LE) creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order. Devils, blue dragons, and hobgoblins are lawful evil.")
 Alignment.create(name: "Neutral Evil", description: "Neutral evil (NE) is the alignment of those who do whatever they can get away with, without compassion or qualms. Many drow, some cloud giants, and goblins are neutral evil.")
 Alignment.create(name: "Chaotic Evil", description: "Chaotic evil (CE) creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons, red dragons, and orcs are chaotic evil.")
+
+#Sample character seeds
+Character.create(name: "Greg the Old", strength: 14, dexterity: 12, consitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 8, alignment_id: 5)
+Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, consitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12, alignment_id: 3)
 
 def monster_parsing
 all_monster_data = RestClient.get("http://www.dnd5eapi.co/api/monsters")
