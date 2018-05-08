@@ -61,6 +61,7 @@ class EncountersController < ApplicationController
   end
 
   def destroy
+    # byebug
     find_encounter_by_id # Sets encounter to @encounter
     if @encounter.user == current_user && logged_in?
       @encounter.destroy

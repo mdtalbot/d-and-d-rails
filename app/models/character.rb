@@ -10,4 +10,8 @@ class Character < ApplicationRecord
   validates :name, :strength, :dexterity, :consitution, :intelligence, :wisdom, :charisma, presence: true
   validates :strength, :dexterity, :consitution, :intelligence, :wisdom, :charisma, inclusion: { in: 0..20, message: "value must be between 0 and 20."}
   validates :name, uniqueness: true
+
+  def char_name_and_level
+    "#{name} (Level #{level})"
+  end
 end
