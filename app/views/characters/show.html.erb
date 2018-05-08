@@ -1,8 +1,8 @@
 <h1><%= @character.name %></h1>
 <ul>
-  <li>Class: <%= @character.char_class%></li>
-  <li>Race: <%= @character.char_race%></li>
-  <li>Alignment: <%= @character.alignment%></li>
+  <li>Class: <%= @character.char_class.name %></li>
+  <li>Race: <%= @character.char_race.name %></li>
+  <li>Alignment: <%= @character.alignment.name %></li>
   <br><br>
   <li>Level: <%= @character.level%></li>
   <li>Experience: <%= @character.experience%></li>
