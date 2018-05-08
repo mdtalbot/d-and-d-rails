@@ -7,9 +7,33 @@
     <br>
   <%= f.text_area :content %>
     <br></br>
-  <%= f.label "Monsters:" %>
+  <%= f.label "Very Easy Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.collection_check_boxes :monster_ids, @very_easy_monsters, :id, :name %>
 
-  <%= f.collection_check_boxes :monster_ids, @monsters, :id, :name %>
+    <br><br>
+
+  <%= f.label "Easy Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.collection_check_boxes :monster_ids, @easy_monsters, :id, :name %>
+
+    <br><br>
+
+  <%= f.label "Medium Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.collection_check_boxes :monster_ids, @medium_monsters, :id, :name %>
+
+    <br><br>
+
+  <%= f.label "Hard Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.collection_check_boxes :monster_ids, @hard_monsters, :id, :name %>
+
+    <br><br>
+
+  <%= f.label "Very Hard Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.collection_check_boxes :monster_ids, @very_hard_monsters, :id, :name %>
+
+    <br><br>
+
+  <%= f.label "Impossible Monsters:" :class => 'submit_class_name_here'%>
+  <%= f.collection_check_boxes :monster_ids, @impossible_monsters, :id, :name %>
 
     <br><br>
 
