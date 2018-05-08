@@ -15,7 +15,7 @@
 
   <%= f.label "Characters:" %>
 
-  <%= f.collection_check_boxes :character_ids, @characters, :id, :name %>
+  <%= f.collection_check_boxes :character_ids, @characters, :id, :char_name_and_level %>
     <br></br>
     <%= f.submit %>
 <% end %>
