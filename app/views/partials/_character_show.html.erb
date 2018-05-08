@@ -1,0 +1,37 @@
+<h1><%= @character.name %></h1>
+<% if @character.user %>
+  <p><%= "created by: #{@character.user.username}" %></p>
+<% end %>
+
+<ul>
+  <li>Class: <%= @character.char_class.name %></li>
+  <li>Race: <%= @character.char_race.name %></li>
+  <li>Alignment: <%= @character.alignment.name %></li>
+  <br><br>
+  <li>Level: <%= @character.level%></li>
+  <li>Experience: <%= @character.experience%></li>
+  <br><br>
+  <li>Strength: <%= @character.strength %></li>
+  <li>Dexterity: <%= @character.dexterity %></li>
+  <li>Constitution: <%= @character.consitution %></li>
+  <li>Intelligence: <%= @character.intelligence %></li>
+  <li>Wisdom: <%= @character.wisdom %></li>
+  <li>Charisma: <%= @character.charisma %></li>
+</ul>
+<p>Pets:</p>
+<% @character.pets.each do |pet| %>
+<ul>
+  <li><%= pet.name %></li>
+</ul>
+<% end %>
+
+<%= button_to "Edit", edit_character_path(@character), {method: :get} %><br>
+
+<% if logged_in? %>
+  <%= button_to "<< Return to My Characters", my_characters_path, {method: :get} %><br>
+<% end %>
+<%= button_to "<< Return to All Characters", characters_path, {method: :get} %><br>
+
+<%= form_tag @character, method: "DELETE" do %>
+  <%= submit_tag "Delete this character", :onclick => "return confirm('Really delete this Character???')" %>
+<% end %>

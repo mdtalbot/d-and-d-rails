@@ -22,11 +22,11 @@ class EncountersController < ApplicationController
   def create
     @encounter = Encounter.create(encounters_params)
 
-    if @encounter.valid?
-      if logged_in?
-        @encounter.update(user_id: current_user.id)
-      end
-      redirect_to @encounter
+    if @encounter.valid? && logged_in?
+      @encounter.update(user_id: current_user.id)
+      redirect_to my_encounter_path(current_user.id, @encounter)
+    elsif @encounter.valid?
+      redirect_to encounter_path(@encounter)
     else
       flash[:errors] = @encounter.errors.full_messages
       redirect_to new_encounter_path
@@ -45,9 +45,13 @@ class EncountersController < ApplicationController
 
   def update
     find_encounter_by_id # Sets encounter to @encounter
-    @encounter.update(encounters_params)
 
-    redirect_to @encounter
+    if @encounter.update(encounters_params)
+      redirect_to @encounter
+    else
+      flash[:errors] = @encounter.errors.full_messages
+      redirect_to edit_encounter_path
+    end
   end
 
   def destroy

@@ -15,6 +15,21 @@ class UsersController < ApplicationController
     @encounter = Encounter.find(params[:encounter_id])
   end
 
+  def characters_index
+    find_user_by_id
+    if logged_in?
+      @characters = @user.characters
+    else
+      flash[:notice] = "You are not logged in."
+      redirect_to characters_path
+    end
+  end
+
+  def character_show
+    find_user_by_id
+    @character = Character.find(params[:character_id])
+  end
+
   def show
     find_user_by_id
   end

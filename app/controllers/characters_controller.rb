@@ -32,7 +32,11 @@ class CharactersController < ApplicationController
     @character = Character.create(character_params)
 
     if @character.valid?
-      redirect_to characters_path
+      if logged_in?
+        @character.update(user_id: current_user.id)
+        redirect_to my_character_path(current_user.id, @character)
+      end
+      redirect_to @character
     else
       flash[:errors] = @character.errors.full_messages
       redirect_to new_character_path
@@ -44,7 +48,7 @@ class CharactersController < ApplicationController
     find_character_by_id #Assigns character to @character
 
     if @character.update(character_params)
-      redirect_to characters_path
+      redirect_to @character
     else
       flash[:errors] = @character.errors.full_messages
       redirect_to edit_character_path
