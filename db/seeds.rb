@@ -1,8 +1,5 @@
-Character.create(name: "Greg the Old", strength: 14, dexterity: 12, consitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 1)
-Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, consitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12)
-
-Monster.create(name: "Gerblin", description: "A short, green creature. Looks like Common and sounds like Kelsey Grammar.", hit_points: 10)
-Monster.create(name: "Eldritch ginuea pig", description: "An incombrehensible horror often eaten as a snack in Peru.", hit_points: 50)
+# Monster.create(name: "Gerblin", description: "A short, green creature. Looks like Common and sounds like Kelsey Grammar.", hit_points: 10)
+# Monster.create(name: "Eldritch ginuea pig", description: "An incombrehensible horror often eaten as a snack in Peru.", hit_points: 50)
 
 CharClass.create(name: "Barbarian", description: "A fierce warrior of primitive background who can enter a battle rage.")
 CharClass.create(name: "Bard", description: "An inspiring magician whose music echoes the power of creation.")
@@ -30,6 +27,9 @@ CharRace.create(name: "Halfling", description: "The diminutive halflings survive
 CharRace.create(name: "Half-Orc", description: "Half-orcs’ grayish pigmentation, sloping foreheads, jutting jaws, prominent teeth, and towering builds make their orcish heritage plain for all to see.")
 CharRace.create(name: "Human", description: "Humans are the most adaptable and ambitious people among the common races. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds.")
 CharRace.create(name: "Tiefling", description: "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling.")
+
+Character.create(name: "Greg the Old", strength: 14, dexterity: 12, consitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 1)
+Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, consitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12)
 
 def monster_parsing
 all_monster_data = RestClient.get("http://www.dnd5eapi.co/api/monsters")

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_212405) do
+ActiveRecord::Schema.define(version: 2018_05_08_140139) do
 
   create_table "char_classes", force: :cascade do |t|
     t.string "name"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2018_05_07_212405) do
     t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.integer "char_class_id"
+    t.integer "user_id"
     t.integer "char_race_id"
   end
 
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_05_07_212405) do
     t.integer "perception"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "pets", force: :cascade do |t|
