@@ -1,4 +1,82 @@
-<p>A new user was created <%= @user.username %>.</p>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="x-apple-disable-message-reformatting">
+  <!--[if !mso]><!== -->
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <!--<![endif]-->
+	<title>Welcome to D&D Encounter Generator!</title>
+	<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+</head>
+  <table align="center" bgcolor="#5140A0" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; width: 580px; border-top-width: 0px; border-top-style: solid; border-top-color: #ffffff; background-color: #ffffff;" width="580">
+    <tr>
+      <td align="center" valign="top" bgcolor="#ffffff" style="text-align: center; vertical-align: top;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;border-right-width:0px;font-family:Arial, sans-serif;font-size:26px;line-height:30px;">
+        <br><div style>Hey <b><%=@user.username %>!</b></div><br>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" bgcolor="#ffffff" style="text-align: center; vertical-align: top;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;border-right-width:0px;font-family:Arial, sans-serif;font-size:18px;line-height:26px;">
+        <div>Welcome to D&D Encounter generator!</div><br>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" bgcolor="#fffff" style="text-align: center; vertical-align: top;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;border-right-width:0px;font-family:Arial, sans-serif;font-size:18px;line-height:26px;">
+        <div>We hope that you get a ton of value using our program to build fantastic D&D encounters.</div><br>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" bgcolor="#fffff" style="text-align: center; vertical-align: top;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;border-right-width:0px;font-family:Arial, sans-serif;font-size:18px;line-height:26px;">
+        <div>To get started, build yourself a <%= link_to "character", new_character_url %>, view our repository of D&D <%= link_to "monsters", monsters_url %> or start building an <%= link_to "encounter", encounters_url %>!</div><br>
+      </td>
+    </tr>
+  </table>
 
-<p>To see your encounters, go to:
-<%= link_to "Encounters", encounters_url %></p>
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; width: 580px; border-top-width: 0px; border-top-style: solid; border-top-color: #ffffff; background-color: #ffffff;" width="580">
+  <tr>
+    <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><img src="https://cdn.shopify.com/s/files/1/0921/7330/products/WZK72461_email_670x670.png?v=1520308518"></td>
+  <tr>
+</table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; max-width: 580px; margin: auto;" width="100%">
+  <tr>
+    <td align="center" valign="top" bgcolor="#ffffff" style="text-align: center; vertical-align: top;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;border-right-width:0px;font-family:Arial, sans-serif;font-size:34px;line-height:36px;">
+      <br><div style="color:red;background-color:#ffffff;font-weight:bold;font-size:22px;" >Happy Adventuring,</div>
+      <br>
+      <div style="color:black;background-color:#ffffff;font-style: italic;font-size:30px">The D&D Encounter Generator Team</div><br><br>
+    </td>
+  </tr>
+</table>
+
+<table align="center" border="0" bgcolor="#ff0000" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; max-width: 580px; margin: auto;" width="100%">
+  <tr>
+    <td align="center" valign="top" bgcolor="#ff0000" style="text-align: center; vertical-align: top;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0; background-color:#ffffff;border-right-width:0px;font-family:Arial, sans-serif;font-size:34px;line-height:50px;">
+      <div style="color:black;background-color:red;font-style:italic;font-size:15px">Share D&D Encounter Generator With Your Friends:</div>
+    </td>
+  </tr>
+</table>
+
+<body style="width: 100%; font-family: Arial, sans-serif; mso-line-height-rule: exactly; -webkit-font-smoothing: antialiased; -ms-text-size-adjust: none !important; margin: 0; padding: 0;" align="center">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0; max-width: 580px; margin: auto;" width="100%">
+    <tr>
+      <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><img alt="footer icon" border="0" height="64" src="https://gallery.mailchimp.com/b8a5556372f3438607e7522a4/images/a9075569-456d-491c-a902-f76aa7f7de33.png" style="-ms-interpolation-mode: bicubic; display: block; -mis-interpolation-mode: bicubic; border: 0;" width="143" /></td>
+      <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><a href="http://www.facebook.com"><img alt="facebook icon" border="0" height="64" src="https://gallery.mailchimp.com/b8a5556372f3438607e7522a4/images/dcba3d03-288c-412b-8169-adfa40c9c3c6.png" style="-ms-interpolation-mode: bicubic; display: block; -mis-interpolation-mode: bicubic; border: 0;" width="70" /></a></td>
+      <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><a href="http://www.linkedin.com"><img alt="linkedin icon" border="0" height="64" src="https://gallery.mailchimp.com/b8a5556372f3438607e7522a4/images/9090673c-d4cc-48c0-8548-6a886f98230e.png" style="-ms-interpolation-mode: bicubic; display: block; -mis-interpolation-mode: bicubic; border: 0;" width="76" /></a></td>
+      <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><a href="mailto:?Subject=Check out Dungeons and Dragons Encounter Generator&body=Hey Guys,%0D%0A%0D%0AI just started using Dungeons and Dragons Encounter Generator to help me create amazing encounters in my D and D game and you need to check it out."><img alt="email icon" border="0" height="64" src="https://gallery.mailchimp.com/b8a5556372f3438607e7522a4/images/3ef71099-3773-4eb2-820d-1e70cb858599.png" style="-ms-interpolation-mode: bicubic; display: block; -mis-interpolation-mode: bicubic; border: 0;" width="87" /></a></td>
+      <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><a href="https://twitter.com/home?status=You%20NEED%20to%20check%20out%20Dungeons%20and%20Dragons%20Encounter%20Generator!"><img alt="twitter icon" border="0" height="64" src="https://gallery.mailchimp.com/b8a5556372f3438607e7522a4/images/92cb7206-9ee5-4c73-9c7b-6ac3d59ef264.png" style="-ms-interpolation-mode: bicubic; display: block; -mis-interpolation-mode: bicubic; border: 0;" width="67" /></a></td>
+      <td style="border-collapse: collapse; mso-table-lspace: 0; mso-table-rspace: 0;"><img alt="footer icon 2" border="0" height="64" src="https://gallery.mailchimp.com/b8a5556372f3438607e7522a4/images/68a1e770-3ef5-4174-8a7c-22800f239ae2.png" style="-ms-interpolation-mode: bicubic; display: block; -mis-interpolation-mode: bicubic; border: 0;" width="137" /></td>
+    </tr>
+  </table>
+
+<style type="text/css">
+.ReadMsgBody { width: 100% !important; background-color: #ffffff !important; }
+.ExternalClass { width: 100% !important; background-color: #ffffff !important; }
+body { width: 100% !important; margin: 0 !important; padding: 0 !important; background-color: #ffffff !important; font-family: Arial, sans-serif !important; mso-line-height-rule: exactly !important; -webkit-font-smoothing: antialiased !important; -ms-text-size-adjust: none !important; }
+</style>
+</body>
+</html>

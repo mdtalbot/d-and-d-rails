@@ -1,0 +1,18 @@
+<h3>My Encounters</h3>
+
+<%= render "heading" %>
+<br></br>
+
+<%= flash[:notice] if flash[:notice] %>
+<br>
+
+<ul>
+  <% @encounters.each do |encounter| %>
+    <li><%= link_to encounter.name, encounter_path(encounter) %></li><br>
+  <% end %>
+</ul>
+<br><br>
+
+<%= button_to "Create New Encounter", new_encounter_path, {method: :get} %><br>
+  <br>
+<%= button_to "All Encounters", encounters_path, method: :get %>
