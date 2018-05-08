@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       session[:user_id] = @user.id
+      WelcomeMailer.new_user.deliver_now
       redirect_to @user
     else
       flash[:errors] = @user.errors.full_messages
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, encounter_ids: [], character_ids: [])
+    params.require(:user).permit(:username, :email_address, :password, :password_confirmation, encounter_ids: [], character_ids: [])
   end
 
   def find_user_by_id
