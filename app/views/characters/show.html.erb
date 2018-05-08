@@ -14,8 +14,8 @@
 </ul>
 <% end %>
 
-<h3><%= link_to "Edit", edit_character_path(@character) %><br></h3>
-<h3><%= link_to "Return to All Characters", characters_path %><br>
+<%= button_to "Edit", edit_character_path(@character), {method: :get} %><br>
+<%= button_to "<< Return to All Characters", characters_path, {method: :get} %><br>
 
 <%= form_tag @character, method: "DELETE" do %>
   <%= submit_tag "Delete this character", :onclick => "return confirm('Really delete this Character???')" %>

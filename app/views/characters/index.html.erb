@@ -18,6 +18,6 @@
 </ul>
 <br></br>
 
-<h3><%= link_to "Create New Character", new_character_path %><h3>
+<%= button_to "Create New Character", new_character_path, {method: :get} %><br>
 
-<h3><%= link_to "Back to Homepage", root_path %></h3>
+<%= button_to "Back to Homepage", root_path, {method: :get} %>
