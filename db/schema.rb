@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2018_05_08_150303) do
     t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.integer "char_class_id"
+    t.integer "user_id"
     t.integer "char_race_id"
     t.integer "alignment_id"
     t.integer "level", default: 1
