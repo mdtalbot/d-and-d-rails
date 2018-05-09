@@ -1,0 +1,11 @@
+<%= render 'partials/notices' %>
+<h3>My Encounter:</h3>
+<br>
+<%= form_for @encounter do |f| %>
+  <h4><%= @encounter.name %></h4>
+  <li><%= @encounter.content %></li><br>
+  <%= @encounter.characters %><br>
+  <%= @encounter.monsters %><br>
+
+  <%= f.submit "Create Encounter!" %>
+<% end %>

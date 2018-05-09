@@ -20,9 +20,8 @@
     <br>
   <%= f.number_field :armor_class %>
     <br><br>
-  <%= f.label :hit_points %>
-    <br>
-  <%= f.number_field :hit_points %>
+
+  <%= f.label :hit_points %><br><%= f.number_field :hit_points %>
     <br><br>
   <h3 style="text-align: center;max-width:200px;">Monster Stats</h3>
   <div class="monster_input_container">
@@ -68,9 +67,8 @@
     <br>
   <%= f.text_field :constitution_save, class:"monster_constitution_save" %>
     <br><br>
-  <%= f.label :intelligence_save %>
-    <br>
-  <%= f.text_field :intelligence_save, class:"monster_intelligence_save" %>
+
+  <%= f.label :intelligence_save %><br><%= f.text_field :intelligence_save, class:"monster_intelligence_save" %>
     <br><br>
   <%= f.label :wisdom_save %>
     <br>
@@ -85,7 +83,10 @@
     <br>
   <%= f.text_field :perception, class:"monster_perception" %>
     <br><br><br>
+
   <%= f.submit %>
-<% end %><br>
+
+<% end %>
+<br>
 
 <%= button_to "Back to Homepage", root_path, {method: :get} %><br>
