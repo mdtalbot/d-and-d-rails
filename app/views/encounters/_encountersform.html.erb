@@ -1,4 +1,5 @@
-<%= form_for @encounter do |f| %>
+<%= form_for @encounter, method: :get, url: encounter_preview_path do |f| %>
+
   <%= f.label :name %>
     <br>
   <%= f.text_field :name %>
@@ -67,9 +68,11 @@
 
   <%= f.collection_check_boxes :character_ids, @characters, :id, :char_name_and_level %>
     <br></br>
-    <%= f.submit %>
+
+  <%= f.submit "Preview Encounter" %>
 <% end %>
   <br>
+
 <%= button_to "Browse All Monsters", monsters_path, {method: :get} %><br>
   <br>
 <%= button_to "Browse All Characters", characters_path, {method: :get} %><br>

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :char_class, only: [:index, :show]
   resources :char_race, only: [:index, :show]
   resources :alignment, only: [:index, :show]
+
   get "/pets/search", to: "pets#search", as: "pets_search"
   resources :pets
   get "/characters/search", to: "characters#search", as: "characters_search"
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get "/monsters/search", to: "monsters#search", as: "monsters_search"
   resources :monsters
   get "/encounters/search", to: "encounters#search", as: "encounters_search"
+  get "/encounters/new/preview", to: "encounters#preview", as: "encounter_preview"
   resources :encounters
 
 
