@@ -3,6 +3,10 @@
     <br>
   <%= f.text_field :name, class: "monster_name" %>
     <br><br>
+  <%= f.label :challenge_rating %>
+    <br>
+  <%= f.text_field :challenge_rating, class:"monster_challenge_rating" %>
+    <br><br>
   <%= f.label :description %>
     <br>
   <%= f.text_area :description, class:"monster_description" %>
@@ -10,8 +14,57 @@
   <%= f.label :hit_points %>
     <br>
   <%= f.number_field :hit_points %>
+    <br><br>
+  <%= f.label :size %>
+    <br>
+  <%= f.text_field :size, class:"monster_size" %>
+    <br><br>
+  <%= f.label :strength %>
+    <br>
+  <%= f.text_field :strength, class:"monster_strength" %>
+    <br><br>
+  <%= f.label :dexterity %>
+    <br>
+  <%= f.text_field :dexterity, class:"monster_dexterity" %>
+    <br><br>
+  <%= f.label :constitution %>
+    <br>
+  <%= f.text_field :constitution, class:"monster_constitution" %>
+    <br><br>
+  <%= f.label :intelligence %>
+    <br>
+  <%= f.text_field :intelligence, class:"monster_intelligence" %>
+    <br><br>
+  <%= f.label :wisdom %>
+    <br>
+  <%= f.text_field :wisdom, class:"monster_wisdom" %>
+    <br><br>
+  <%= f.label :charisma %>
+    <br>
+  <%= f.text_field :charisma, class:"monster_charisma" %>
+    <br><br>
+  <%= f.label :constitution_save %>
+    <br>
+  <%= f.text_field :constitution_save, class:"monster_constitution_save" %>
+    <br><br>
+  <%= f.label :intelligence_save %>
+    <br>
+  <%= f.text_field :intelligence_save, class:"monster_intelligence_save" %>
+    <br><br>
+  <%= f.label :wisdom_save %>
+    <br>
+  <%= f.text_field :wisdom_save, class:"monster_wisdom_save" %>
+    <br><br>
+  <%= f.label :history %>
+    <br>
+  <%= f.text_area :history, class:"monster_history" %>
+    <br><br>
+  <%= f.label :perception %>
+    <br>
+  <%= f.text_field :perception, class:"monster_perception" %>
+
     <br><br><br>
   <%= f.submit %>
-<% end %>
+<% end %><br>
 
 <%= button_to "Back to Homepage", root_path, {method: :get} %><br>
