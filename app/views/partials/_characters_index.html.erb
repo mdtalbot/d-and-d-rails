@@ -10,7 +10,7 @@
 <ul>
   <% @characters.each do |character| %>
 
-    <% if character.user_id %>
+    <% if character.user == current_user %>
       <li><%= link_to character.name, my_character_path(character.user_id, character) %></li><br>
     <% else %>
       <li><%= link_to character.name, character_path(character) %></li><br>

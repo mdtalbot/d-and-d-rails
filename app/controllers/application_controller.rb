@@ -38,60 +38,37 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def analytics
-    analytics_numbers
-    all_classes_for_analytics
-  end
+private
 
-  private
+def analytics
+  analytics_numbers
+  all_classes_for_analytics
+end
 
-  def very_easy_monsters
-    @very_easy_monsters = Monster.where(challenge_rating: 0)
-  end
+def analytics_numbers
+  @monster_numbers =
+    if Monster.all.count != 0
+      Monster.all.count
+    else
+      0
+    end
+  @character_numbers =
+    if Character.all.count != 0
+      Character.all.count
+    else
+      0
+    end
+  @encounter_numbers = Encounter.all.count
+  @pets_numbers = Pet.all.count
+  @users_numbers = User.all.count
+end
 
-  def easy_monsters
-    @easy_monsters = Monster.where(challenge_rating: [1, 2, 3])
-  end
+def all_classes_for_analytics
+  @monster = Monster.all
+  @character = Character.all
+  @encounter = Encounter.all
+  @pets = Pet.all
+  @users = User.all
+end
 
-  def medium_monsters
-    @medium_monsters = Monster.where(challenge_rating: [4, 5, 6, 7])
-  end
-
-  def hard_monsters
-    @hard_monsters = Monster.where(challenge_rating: [8, 9, 10])
-  end
-
-  def very_hard_monsters
-    @very_hard_monsters = Monster.where(challenge_rating: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
-  end
-
-  def impossible_monsters
-    @impossible_monsters = Monster.where(challenge_rating: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30])
-  end
-
-  def analytics_numbers
-    @monster_numbers =
-      if Monster.all.count != 0
-        Monster.all.count
-      else
-        0
-      end
-    @character_numbers =
-      if Character.all.count != 0
-        Character.all.count
-      else
-        0
-      end
-    @encounter_numbers = Encounter.all.count
-    @pets_numbers = Pet.all.count
-    @users_numbers = User.all.count
-  end
-
-  def all_classes_for_analytics
-    @monster = Monster.all
-    @character = Character.all
-    @encounter = Encounter.all
-    @pets = Pet.all
-    @users = User.all
-  end
 end

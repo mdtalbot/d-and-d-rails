@@ -13,15 +13,16 @@ Rails.application.routes.draw do
   get "/encounters/search", to: "encounters#search", as: "encounters_search"
   resources :encounters
 
-  resources :users
-  get '/signup', to: 'users#new', as: 'register'
+
   get '/login', to: 'sessions#new', as: 'login'
   post '/sessions', to: 'sessions#create', as: 'sessions'
   post '/logout', to: 'sessions#destroy'
 
+  resources :users
+  get '/signup', to: 'users#new', as: 'register'
+
   get '/users/:id/encounters', to: 'users#encounters_index', as: 'my_encounters'
   get '/users/:id/encounters/:encounter_id', to: 'users#encounter_show', as: 'my_encounter'
-  get '/users/:id/encounters/:encounter_id/edit', to: 'users#encounter_edit', as: 'edit_my_encounter'
 
   get '/users/:id/characters', to: 'users#characters_index', as: 'my_characters'
   get '/users/:id/characters/:character_id', to: 'users#character_show', as: 'my_character'

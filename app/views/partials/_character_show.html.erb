@@ -34,6 +34,4 @@
 <% end %>
 <%= button_to "<< Return to All Characters", characters_path, {method: :get} %><br>
 
-<%= form_tag @character, method: "DELETE" do %>
-  <%= submit_tag "Delete this character", :onclick => "return confirm('Really delete this Character???')" %>
-<% end %>
+<%= button_to "Delete This Character", @character, {method: :delete, :onclick => "return confirm('Really delete this character?')"} %><br>

@@ -29,6 +29,14 @@ class CharactersController < ApplicationController
 
   def edit
     find_character_by_id #Assigns character to @character
+    @char_races = CharRace.all
+    @char_classes = CharClass.all
+    @alignments = Alignment.all
+
+    if !permitted?(@character.user)
+      flash[:notice] = "You are not authorized to edit this item."
+      redirect_to @character
+    end
   end
 
   def create

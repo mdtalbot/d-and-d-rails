@@ -15,21 +15,11 @@ class UsersController < ApplicationController
     @encounter = Encounter.find(params[:encounter_id])
   end
 
-  def encounter_edit
-    @encounter = Encounter.find(params[:encounter_id])
-    @characters = Character.all
-    very_easy_monsters
-    easy_monsters
-    medium_monsters
-    hard_monsters
-    very_hard_monsters
-    impossible_monsters
-
-    if !permitted?(@encounter.user)
-      flash[:notice] = "You are not authorized to edit this item."
-      redirect_to @encounter
-    end
-  end
+  # def encounter_edit
+  #   @encounter = Encounter.find(params[:encounter_id])
+  #   @characters = Character.all
+  #   monsters_by_cr
+  # end
 
   def characters_index
     set_user_by_current_user
@@ -45,6 +35,13 @@ class UsersController < ApplicationController
     set_user_by_current_user
     @character = Character.find(params[:character_id])
   end
+
+  # def character_edit
+  #   @character = Character.find(params[:character_id])
+  #   @char_races = CharRace.all
+  #   @char_classes = CharClass.all
+  #   @alignments = Alignment.all
+  # end
 
   def monsters_index
     set_user_by_current_user
@@ -94,6 +91,13 @@ class UsersController < ApplicationController
     find_user_by_id
     @user.update(user_params)
     redirect_to @user
+  end
+
+  def destroy
+    find_user_by_id.delete
+    session[:user_id] = nil
+    flash[:notice] = "Your account has been deleted."
+    redirect_to root_path
   end
 
   private
