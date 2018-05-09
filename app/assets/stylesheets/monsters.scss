@@ -6,3 +6,14 @@ form input[type='text'].monster_name {
       height: 30px;
       font-size: 18px;
     }
+
+.checkboxes_container {
+  -webkit-column-count: 5;
+     -moz-column-count: 5;
+          column-count: 5;
+ }
+
+.checkboxes_inner_container {
+ flex: 1;
+ margin: 5px;
+}
