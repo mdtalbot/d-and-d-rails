@@ -1,48 +1,69 @@
 <%= form_for @monster do |f| %>
+<br><br>
   <%= f.label :name %>
     <br>
   <%= f.text_field :name, class: "monster_name" %>
     <br><br>
-  <%= f.label :challenge_rating %>
+  <%= f.label :size %>
     <br>
-  <%= f.text_field :challenge_rating, class:"monster_challenge_rating" %>
+  <%= f.text_field :size %>
     <br><br>
   <%= f.label :description %>
     <br>
-  <%= f.text_area :description, class:"monster_description" %>
+  <%= f.text_area :description %>
+  <br><br>
+  <%= f.label :challenge_rating %>
+    <br>
+  <%= f.text_field :challenge_rating, class:"monster_challenge_rating" %>
+  <br><br>
+  <%= f.label :armor_class %>
+    <br>
+  <%= f.number_field :armor_class %>
     <br><br>
   <%= f.label :hit_points %>
     <br>
   <%= f.number_field :hit_points %>
     <br><br>
-  <%= f.label :size %>
+  <h3 style="text-align: center;max-width:200px;">Monster Stats</h3>
+  <div class="monster_input_container">
+  <div class="monster_input_inner_container">
+  <%= f.label "STR" %>
     <br>
-  <%= f.text_field :size, class:"monster_size" %>
+  <%= f.number_field :strength, class:"monster_strength" %>
     <br><br>
-  <%= f.label :strength %>
+  </div>
+  <div class="monster_input_inner_container">
+  <%= f.label "DEX" %>
     <br>
-  <%= f.text_field :strength, class:"monster_strength" %>
+  <%= f.number_field :dexterity, class:"monster_dexterity" %>
     <br><br>
-  <%= f.label :dexterity %>
+  </div>
+  <div class="monster_input_inner_container">
+  <%= f.label "CON" %>
     <br>
-  <%= f.text_field :dexterity, class:"monster_dexterity" %>
+  <%= f.number_field :constitution, class:"monster_constitution" %>
     <br><br>
-  <%= f.label :constitution %>
+  </div>
+  <div class="monster_input_inner_container">
+  <%= f.label "INT" %>
     <br>
-  <%= f.text_field :constitution, class:"monster_constitution" %>
+  <%= f.number_field :intelligence, class:"monster_intelligence" %>
     <br><br>
-  <%= f.label :intelligence %>
+  </div>
+  <div class="monster_input_inner_container">
+  <%= f.label "WIS" %>
     <br>
-  <%= f.text_field :intelligence, class:"monster_intelligence" %>
+  <%= f.number_field :wisdom, class:"monster_wisdom" %>
     <br><br>
-  <%= f.label :wisdom %>
+  </div>
+  <div class="monster_input_inner_container">
+  <%= f.label "CHA" %>
     <br>
-  <%= f.text_field :wisdom, class:"monster_wisdom" %>
+  <%= f.number_field :charisma, class:"monster_charisma" %>
     <br><br>
-  <%= f.label :charisma %>
-    <br>
-  <%= f.text_field :charisma, class:"monster_charisma" %>
-    <br><br>
+  </div>
+  </div>
+  <h3>Saving Throws</h3>
   <%= f.label :constitution_save %>
     <br>
   <%= f.text_field :constitution_save, class:"monster_constitution_save" %>
@@ -54,15 +75,15 @@
   <%= f.label :wisdom_save %>
     <br>
   <%= f.text_field :wisdom_save, class:"monster_wisdom_save" %>
-    <br><br>
+      <br><br>
+  <h3>Skills</h3>
   <%= f.label :history %>
     <br>
-  <%= f.text_area :history, class:"monster_history" %>
+  <%= f.text_field :history, class:"monster_history" %>
     <br><br>
   <%= f.label :perception %>
     <br>
   <%= f.text_field :perception, class:"monster_perception" %>
-
     <br><br><br>
   <%= f.submit %>
 <% end %><br>
