@@ -19,6 +19,12 @@ class EncountersController < ApplicationController
     monsters_by_cr
   end
 
+  def preview
+    @encounter = Encounter.new(encounters_params)
+    @characters = Character.all
+    monsters_by_cr
+  end
+
   def create
     @encounter = Encounter.create(encounters_params)
     monster_challenge_sum(encounters_params)
