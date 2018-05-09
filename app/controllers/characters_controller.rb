@@ -22,6 +22,9 @@ class CharactersController < ApplicationController
 
   def show
     find_character_by_id #Assigns character to @character
+    @char_races = CharRace.all
+    @char_classes = CharClass.all
+    @alignments = Alignment.all
   end
 
   def edit
