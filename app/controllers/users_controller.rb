@@ -15,12 +15,6 @@ class UsersController < ApplicationController
     @encounter = Encounter.find(params[:encounter_id])
   end
 
-  # def encounter_edit
-  #   @encounter = Encounter.find(params[:encounter_id])
-  #   @characters = Character.all
-  #   monsters_by_cr
-  # end
-
   def characters_index
     set_user_by_current_user
     if logged_in?
@@ -35,13 +29,6 @@ class UsersController < ApplicationController
     set_user_by_current_user
     @character = Character.find(params[:character_id])
   end
-
-  # def character_edit
-  #   @character = Character.find(params[:character_id])
-  #   @char_races = CharRace.all
-  #   @char_classes = CharClass.all
-  #   @alignments = Alignment.all
-  # end
 
   def monsters_index
     set_user_by_current_user

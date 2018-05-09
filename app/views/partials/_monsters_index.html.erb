@@ -11,7 +11,7 @@
 
 <ul>
   <% @monsters.each do |monster| %>
-    <% if monster.user == current_user %>
+    <% if monster.user == current_user && logged_in? %>
       <li class="monster"><%= link_to monster.name, my_monster_path(monster.user_id, monster) %><%= " (#{monster.description})" %></li><br>
     <% else %>
       <li class= "monster"><%= link_to monster.name, monster_path(monster) %><%= " (#{monster.description})" %></li>
