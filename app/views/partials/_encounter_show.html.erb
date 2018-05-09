@@ -18,3 +18,12 @@
     <li><%= monster.name %></li>
   <% end %>
 </ul>
+
+<%= button_to "Edit", edit_encounter_path(@encounter), {method: :get} %><br>
+
+<% if logged_in? %>
+  <%= button_to "<< Return to My Encounters", my_encounters_path, {method: :get} %><br>
+<% end %>
+<%= button_to "<< Return to All Encounters", encounters_path, {method: :get} %><br>
+
+<%= button_to "Delete This Encounter", @encounter, {method: :delete, :onclick => "return confirm('Really delete this encounter?')"} %><br>
