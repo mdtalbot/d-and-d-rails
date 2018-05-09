@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get '/users/:id/monsters/:monster_id', to: 'users#monster_show', as: 'my_monster'
 
   root 'application#home'
+  get '/analytics', to: 'application#analytics'
 end

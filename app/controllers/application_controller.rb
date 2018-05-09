@@ -38,6 +38,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def analytics
+    analytics_numbers
+    all_classes_for_analytics
+  end
+
   private
 
   def very_easy_monsters
@@ -62,5 +67,31 @@ class ApplicationController < ActionController::Base
 
   def impossible_monsters
     @impossible_monsters = Monster.where(challenge_rating: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30])
+  end
+
+  def analytics_numbers
+    @monster_numbers =
+      if Monster.all.count != 0
+        Monster.all.count
+      else
+        0
+      end
+    @character_numbers =
+      if Character.all.count != 0
+        Character.all.count
+      else
+        0
+      end
+    @encounter_numbers = Encounter.all.count
+    @pets_numbers = Pet.all.count
+    @users_numbers = User.all.count
+  end
+
+  def all_classes_for_analytics
+    @monster = Monster.all
+    @character = Character.all
+    @encounter = Encounter.all
+    @pets = Pet.all
+    @users = User.all
   end
 end
