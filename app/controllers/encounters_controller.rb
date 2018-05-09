@@ -26,9 +26,10 @@ class EncountersController < ApplicationController
 
   def create
     @encounter = Encounter.create(encounters_params)
-    #TESTING NEXT LINE
-    challenge_sum(encounters_params)
-    player_level_sum(encounters_params)
+    monster_challenge_sum(encounters_params)
+    player_level_avg(encounters_params)
+    generate_encounter_monsters(encounters_params)
+    byebug
 
     if @encounter.valid? && logged_in?
       @encounter.update(user_id: current_user.id)
@@ -93,17 +94,17 @@ class EncountersController < ApplicationController
     @encounters = Encounter.where(Encounter.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 
-  def challenge_sum(encounters_params)
+  def monster_challenge_sum(encounters_params)
     sum = 0
     monster_objs = Monster.where(id: encounters_params[:monster_ids])
+    sum += (monster_objs.size / 2.0)
     monster_objs.each do |monster|
        sum += monster.challenge_rating
     end
-    average_monster_level = (sum.to_f / monster_objs.count)
-    average_monster_level
+    sum
   end
 
-  def player_level_sum(encounters_params)
+  def player_level_avg(encounters_params)
     sum = 0
     char_objs = Character.where(id: encounters_params[:character_ids])
     char_objs.each do |char|
@@ -114,6 +115,25 @@ class EncountersController < ApplicationController
   end
 
   def generate_encounter_monsters(encounters_params)
+    difference = (monster_challenge_sum(encounters_params).to_f - player_level_avg(encounters_params).to_f)
+    case difference
+    when >= 4
+      "Difficulty: Lethal"
+    when 3
+      "Difficulty: Brutal"
+    when 2
+      "Difficulty: Hard"
+    when 1
+      "Difficulty: Challenging"
+    when 0
+      "Difficulty: Evenly Matched"
+    when -1
+      "Difficulty: Fairly Easy"
+    when -2
+      "Difficulty: Easy"
+    when -3
+      "Difficulty: Pushover"
+    end
   end
 
 end
