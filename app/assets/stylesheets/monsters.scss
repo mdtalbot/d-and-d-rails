@@ -1,8 +1,122 @@
 // Place all the styles related to the Monsters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Mrs Eaves";
+  src: url(/assets/mrs_eavessmallcaps_regular-webfont.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'scala_sans_scregular';
+    src: url('scala-sans-regular-sc_39565-webfont.woff2') format('woff2'),
+         url('scala-sans-regular-sc_39565-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'scalasansbold';
+    src: url('scala-sans-bold-1361514697-webfont.woff2') format('woff2'),
+         url('scala-sans-bold-1361514697-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'scala_sansregular';
+    src: url('scalasans-regular-webfont.woff2') format('woff2'),
+         url('scalasans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1.monster_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  margin-left: 40px;
+}
+
+div.monster_background{
+    background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
+    background-repeat: no-repeat;
+    background-size: 400px 538px;
+}
+
+span.monster_subtitles{
+  font-family:"scalasansbold";
+  color: #bd0100;
+  margin-left: 40px;
+}
+
+span.monster_info{
+  font-family:"scalasansbold";
+  color: #bd0100;
+}
+
 form input[type='text'].monster_name {
       width: 24.5%;
       height: 30px;
       font-size: 18px;
     }
+
+.checkboxes_container {
+  -webkit-column-count: 5;
+     -moz-column-count: 5;
+          column-count: 5;
+ }
+
+.checkboxes_inner_container {
+ flex: 1;
+ margin: 5px;
+}
+
+.monster_input_container {
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+          max-width: 200px;
+}
+
+.monster_input_inner_container {
+ flex: 1;
+ text-align: center;
+}
+
+form input[type='number'].monster_strength{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}
+
+form input[type='number'].monster_dexterity{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}
+
+form input[type='number'].monster_constitution{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}
+
+form input[type='number'].monster_intelligence{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}
+
+form input[type='number'].monster_wisdom{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}
+
+form input[type='number'].monster_charisma{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+}

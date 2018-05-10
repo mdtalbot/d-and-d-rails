@@ -38,4 +38,37 @@ class ApplicationController < ActionController::Base
     end
   end
 
+private
+
+def analytics
+  analytics_numbers
+  all_classes_for_analytics
+end
+
+def analytics_numbers
+  @monster_numbers =
+    if Monster.all.count != 0
+      Monster.all.count
+    else
+      0
+    end
+  @character_numbers =
+    if Character.all.count != 0
+      Character.all.count
+    else
+      0
+    end
+  @encounter_numbers = Encounter.all.count
+  @pets_numbers = Pet.all.count
+  @users_numbers = User.all.count
+end
+
+def all_classes_for_analytics
+  @monster = Monster.all
+  @character = Character.all
+  @encounter = Encounter.all
+  @pets = Pet.all
+  @users = User.all
+end
+
 end

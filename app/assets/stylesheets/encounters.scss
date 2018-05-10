@@ -40,14 +40,14 @@ p.errors {
 .hard_monster_type_titles {
   font-size: 20px;
   font-style: bold;
-  color: yellow;
+  color: #ffca37;
   display: block;
 }
 
 .very_hard_monster_type_titles {
   font-size: 20px;
   font-style: bold;
-  color: orange;
+  color: #ff7f21;
   display: block;
 }
 
@@ -58,8 +58,18 @@ p.errors {
   display: block;
 }
 
-
 .monster_checkbox_container {
+  display:grid;
   margin: 5px;
   font-size: 14px;
  }
+
+ .checkboxes_container {
+   -webkit-column-count: 5;
+      -moz-column-count: 5;
+           column-count: 5;
+  }
+
+.checkboxes_inner_container {
+  flex: 1;
+}

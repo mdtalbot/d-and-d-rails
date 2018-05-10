@@ -1,29 +1,30 @@
 <%= render 'partials/notices' %>
-
-<h1><%= @monster.name %></h1>
+<div class="monster_background">
+<br><br>
+<h1 class="monster_show"><%= @monster.name %></h1>
 
 <% if @monster.user %>
   <p><%= "Created by: #{@monster.user.username.capitalize}" %></p>
 <% end %>
 
-<span><b>Description:</b> <em><%= @monster.description %></em></span></br>
-<span><b>Challenge Rating:</b> <em><%= @monster.challenge_rating %></em></span></br>
-<span><b>Armor Class:</b> <em><%= @monster.armor_class %></em></span></br>
-<span><b>Hit Points:</b> <em><%= @monster.hit_points %></em></span></br></br>
-<ul>
-  <li><b>Size:</b> <em><%= @monster.size %></em></li>
-  <li><b>Strength:</b> <em><%= @monster.strength %></em></li>
-  <li><b>Dexterity:</b> <em><%= @monster.dexterity %></em></li>
-  <li><b>Constitution:</b> <em><%= @monster.constitution %></em></li>
-  <li><b>Intelligence:</b> <em><%= @monster.intelligence %></em></li>
-  <li><b>Wisdom:</b> <em><%= @monster.wisdom %></em></li>
-  <li><b>Charisma:</b> <em><%= @monster.charisma %></em></li>
-  <li><b>Constituion Saving Throw:</b> <em><%= @monster.constitution_save %></em></li>
-  <li><b>Intelligence Saving Throw:</b> <em><%= @monster.intelligence_save %></em></li>
-  <li><b>Wisdom Saving Throw:</b> <em><%= @monster.wisdom_save %></em></li>
-  <li><b>History:</b> <em><%= @monster.history %></em></li>
-  <li><b>Perception:</b> <em><%= @monster.perception %></em></li>
-</ul>
+<span class="monster_subtitles"><b>Description:</b></span> <span class="monster_info"><em><%= @monster.description %></em></span></br>
+<span class="monster_subtitles"><b>Challenge Rating:</b></span> <span class="monster_info"><%= @monster.challenge_rating %></span></br>
+<span class="monster_subtitles"><b>Armor Class:</b></span> <span class="monster_info"><%= @monster.armor_class %></span></br>
+<span class="monster_subtitles"><b>Hit Points:</b></span> <span class="monster_info"><%= @monster.hit_points %></span></br></br>
+  <span class="monster_subtitles"><b>Size:</b></span> <span class="monster_info"><%= @monster.size %></span></br>
+  <span class="monster_subtitles"><b>Strength:</b></span> <span class="monster_info"><span><%= @monster.strength %></span></br>
+  <span class="monster_subtitles"><b>Dexterity:</b></span> <span class="monster_info"><em><%= @monster.dexterity %></span></br>
+  <span class="monster_subtitles"><b>Constitution:</b></span> <span class="monster_info"><%= @monster.constitution %></span></br>
+  <span class="monster_subtitles"><b>Intelligence:</b></span> <span class="monster_info"><%= @monster.intelligence %></span></br>
+  <span class="monster_subtitles"><b>Wisdom:</b></span> <span class="monster_info"><%= @monster.wisdom %></span></br>
+  <span class="monster_subtitles"><b>Charisma:</b></span> <span class="monster_info"><%= @monster.charisma %></span></br>
+  <span class="monster_subtitles"><b>Constituion Saving Throw:</b></span> <span class="monster_info"><%= @monster.constitution_save %></span></br>
+  <span class="monster_subtitles"><b>Intelligence Saving Throw:</b></span> <span class="monster_info"><%= @monster.intelligence_save %></span></br>
+  <span class="monster_subtitles"><b>Wisdom Saving Throw:</b></span> <span class="monster_info"><%= @monster.wisdom_save %></span></br>
+  <span class="monster_subtitles"><b>History:</b></span> <span class="monster_info"><%= @monster.history %></span></br>
+  <span class="monster_subtitles"><b>Perception:</b></span> <span class="monster_info"><%= @monster.perception %></span></br>
+<br>
+</div>
 <br>
 <%= button_to "Edit Monster", edit_monster_path(@monster), {method: :get} %><br>
 
