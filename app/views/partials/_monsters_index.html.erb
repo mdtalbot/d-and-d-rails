@@ -9,15 +9,17 @@
 
 <br>
 
-<ul>
+<div class="checkboxes_container">
   <% @monsters.each do |monster| %>
-    <% if monster.user == current_user && logged_in? %>
-      <li class="monster"><%= link_to monster.name, my_monster_path(monster.user_id, monster) %><%= " (#{monster.description})" %></li><br>
+    <div class="checkboxes_inner_container">
+    <% if monster.user == current_user %>
+      <div class="monster"><%= link_to monster.name, my_monster_path(monster.user_id, monster) %><%= " (#{monster.description})" %></div><br>
     <% else %>
-      <li class= "monster"><%= link_to monster.name, monster_path(monster) %><%= " (#{monster.description})" %></li>
+      <div class= "monster"><%= link_to monster.name, monster_path(monster) %><%= " (#{monster.description})" %></div>
     <% end %>
+    </div>
   <% end %>
-</ul>
+</div>
 <br><br>
 
 <%= button_to "Create New Monster", new_monster_path, {method: :get} %><br>
