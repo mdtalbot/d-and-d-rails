@@ -14,8 +14,8 @@
 </ul>
 <p>vs.</p>
 <ul>
-  <% @encounter.monsters.each do |monster| %>
-    <li><%= monster.name %></li>
+  <% @encounter.monster_encounters.each do |m_e| %>
+    <li><%= m_e.monster.name %> (<%= m_e.quantity %>)</li>
   <% end %>
 </ul>
 

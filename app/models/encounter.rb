@@ -7,4 +7,11 @@ class Encounter < ApplicationRecord
 
   validates :name, :content, presence: true
   validates :name, uniqueness: true
+
+  def monster_quantity(num)
+    monster_encounters.each do |m_e|
+      m_e.quantity = num
+    end
+  end
+
 end
