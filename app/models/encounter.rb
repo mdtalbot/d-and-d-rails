@@ -14,4 +14,12 @@ class Encounter < ApplicationRecord
     end
   end
 
+  def encounter_difficulty=(string)
+    @encounter_difficulty = string
+  end
+
+  def encounter_difficulty
+    @encounter_difficulty
+  end
+
 end

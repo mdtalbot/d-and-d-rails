@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe Character, type: :model do
   let(:raist_attributes) do {name: 'Raistlin Majere', strength: 10, dexterity: 16, constitution: 8, intelligence: 20, wisdom: 14, charisma: 15, char_class_id: 12, char_race_id: 12, alignment_id: 8, level: 10, experience: 64000}
   end
