@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_08_150303) do
+ActiveRecord::Schema.define(version: 2018_05_10_154403) do
 
   create_table "alignments", force: :cascade do |t|
     t.string "name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2018_05_08_150303) do
     t.integer "encounter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
   end
 
   create_table "monsters", force: :cascade do |t|

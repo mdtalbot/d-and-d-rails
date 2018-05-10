@@ -21,8 +21,6 @@ class EncountersController < ApplicationController
 
   def preview
     @encounter = Encounter.new(encounters_params)
-    @characters = Character.all
-    monsters_by_cr
   end
 
   def create
@@ -30,7 +28,11 @@ class EncountersController < ApplicationController
     monster_challenge_sum(encounters_params)
     player_level_avg(encounters_params)
     generate_encounter_monsters(encounters_params)
-    byebug
+
+    @encounter.monster_encounters.each do |m_e|
+      m_e.quantity = params[:encounter][:quantity]["#{m_e.monster.id}"]
+      m_e.save
+    end
 
     if @encounter.valid? && logged_in?
       @encounter.update(user_id: current_user.id)

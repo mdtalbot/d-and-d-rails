@@ -2,28 +2,28 @@
 <div class="monster_background">
 <br><br>
 <h1 class="monster_show"><%= @monster.name %></h1>
-
-<% if @monster.user %>
-  <p><%= "Created by: #{@monster.user.username.capitalize}" %></p>
-<% end %>
-
 <span class="monster_subtitles"><b>Description:</b></span> <span class="monster_info"><em><%= @monster.description %></em></span></br>
+<% if @monster.user %>
+  <span class="monster_subtitles"><b>Created by:</b><em><%= " #{@monster.user.username.capitalize}" %></em></span></br>
+<% end %>
+<img class="monster_dividers" src = "/../assets/red-divider.png"><br>
+<span class="monster_subtitles"><b>Size:</b></span> <span class="monster_info"><%= @monster.size %></span></br>
 <span class="monster_subtitles"><b>Challenge Rating:</b></span> <span class="monster_info"><%= @monster.challenge_rating %></span></br>
 <span class="monster_subtitles"><b>Armor Class:</b></span> <span class="monster_info"><%= @monster.armor_class %></span></br>
-<span class="monster_subtitles"><b>Hit Points:</b></span> <span class="monster_info"><%= @monster.hit_points %></span></br></br>
-  <span class="monster_subtitles"><b>Size:</b></span> <span class="monster_info"><%= @monster.size %></span></br>
-  <span class="monster_subtitles"><b>Strength:</b></span> <span class="monster_info"><span><%= @monster.strength %></span></br>
-  <span class="monster_subtitles"><b>Dexterity:</b></span> <span class="monster_info"><em><%= @monster.dexterity %></span></br>
-  <span class="monster_subtitles"><b>Constitution:</b></span> <span class="monster_info"><%= @monster.constitution %></span></br>
-  <span class="monster_subtitles"><b>Intelligence:</b></span> <span class="monster_info"><%= @monster.intelligence %></span></br>
-  <span class="monster_subtitles"><b>Wisdom:</b></span> <span class="monster_info"><%= @monster.wisdom %></span></br>
-  <span class="monster_subtitles"><b>Charisma:</b></span> <span class="monster_info"><%= @monster.charisma %></span></br>
-  <span class="monster_subtitles"><b>Constituion Saving Throw:</b></span> <span class="monster_info"><%= @monster.constitution_save %></span></br>
-  <span class="monster_subtitles"><b>Intelligence Saving Throw:</b></span> <span class="monster_info"><%= @monster.intelligence_save %></span></br>
-  <span class="monster_subtitles"><b>Wisdom Saving Throw:</b></span> <span class="monster_info"><%= @monster.wisdom_save %></span></br>
-  <span class="monster_subtitles"><b>History:</b></span> <span class="monster_info"><%= @monster.history %></span></br>
-  <span class="monster_subtitles"><b>Perception:</b></span> <span class="monster_info"><%= @monster.perception %></span></br>
-<br>
+<span class="monster_subtitles"><b>Hit Points:</b></span> <span class="monster_info"><%= @monster.hit_points %></span></br>
+<img class="monster_dividers" src = "/../assets/red-divider.png"><br>
+  <span class="monster_subtitles"><b>Strength:</b></span> <span class="monster_info"><em><%= @monster.strength %></em></span></br>
+  <span class="monster_subtitles"><b>Dexterity:</b></span> <span class="monster_info"><em><%= @monster.dexterity %></em></span></br>
+  <span class="monster_subtitles"><b>Constitution:</b></span> <span class="monster_info"><em><%= @monster.constitution %></em></span></br>
+  <span class="monster_subtitles"><b>Intelligence:</b></span> <span class="monster_info"><em><%= @monster.intelligence %></em></span></br>
+  <span class="monster_subtitles"><b>Wisdom:</b></span> <span class="monster_info"><em><%= @monster.wisdom %></em></span></br>
+  <span class="monster_subtitles"><b>Charisma:</b></span> <span class="monster_info"><em><%= @monster.charisma %></em></span></br>
+  <span class="monster_subtitles"><b>Constituion Saving Throw:</b></span> <span class="monster_info"><em><%= @monster.constitution_save %></em></span></br>
+  <span class="monster_subtitles"><b>Intelligence Saving Throw:</b></span> <span class="monster_info"><em><%= @monster.intelligence_save %></em></span></br>
+  <span class="monster_subtitles"><b>Wisdom Saving Throw:</b></span> <span class="monster_info"><em><%= @monster.wisdom_save %></em></span></br>
+  <span class="monster_subtitles"><b>History:</b></span> <span class="monster_info"><em><%= @monster.history %></em></span></br>
+  <span class="monster_subtitles"><b>Perception:</b></span> <span class="monster_info"><em><%= @monster.perception %></em></span></br>
+<br><br>
 </div>
 <br>
 <%= button_to "Edit Monster", edit_monster_path(@monster), {method: :get} %><br>

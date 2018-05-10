@@ -5,4 +5,6 @@ class Monster < ApplicationRecord
 
   validates :name, :description, :hit_points, :size, :challenge_rating, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :armor_class, presence: true
   validates :hit_points, inclusion: { in: 1..500, message: "value must be between 1 and 500."}
+
+  MONSTER_SIZES = ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
 end
