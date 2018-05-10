@@ -12,6 +12,6 @@ class Character < ApplicationRecord
   validates :name, uniqueness: true
 
   def char_name_and_level
-    "#{name} (Level #{level})"
+    "#{name} (Level #{level}) "
   end
 end

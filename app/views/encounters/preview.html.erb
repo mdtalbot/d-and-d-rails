@@ -3,9 +3,33 @@
 <br>
 <%= form_for @encounter do |f| %>
   <h4><%= @encounter.name %></h4>
-  <li><%= @encounter.content %></li><br>
-  <%= @encounter.characters %><br>
-  <%= @encounter.monsters %><br>
+  <%= f.hidden_field :name %>
+  <ul>
+    <li><%= @encounter.content %></li><br>
+    <%= f.hidden_field :content %>
+  </ul>
+
+  <h5>Characters:</h5>
+  <% @encounter.character_ids.each do |cid| %>
+    <%= f.hidden_field :character_ids, {name: "encounter[character_ids][]", value: cid} %>
+  <% end %>
+  <ul>
+    <% @encounter.characters.each do |character| %>
+      <li><%= character.char_name_and_level %></li>
+    <% end %>
+  </ul><br>
+
+  <h5>Monsters:</h5>
+  <% @encounter.monster_ids.each do |mid| %>
+    <%= f.hidden_field :monster_ids, {name: "encounter[monster_ids][]", value: mid} %>
+  <% end %>
+
+  <ul>
+    <% @encounter.monster_encounters.each do |m_e| %>
+      <li><%= m_e.monster.name %><br>
+        <%= f.number_field :monster_quantity, {name: "encounter[quantity][#{m_e.monster.id}]", value: m_e.quantity} %></li>
+    <% end %>
+  </ul><br>
 
   <%= f.submit "Create Encounter!" %>
 <% end %>

@@ -21,15 +21,18 @@ class EncountersController < ApplicationController
 
   def preview
     @encounter = Encounter.new(encounters_params)
-    @characters = Character.all
-    monsters_by_cr
   end
 
   def create
     @encounter = Encounter.create(encounters_params)
-    #TESTING NEXT LINE
-    challenge_sum(encounters_params)
-    player_level_sum(encounters_params)
+    monster_challenge_sum(encounters_params)
+    player_level_avg(encounters_params)
+    generate_encounter_monsters(encounters_params)
+
+    @encounter.monster_encounters.each do |m_e|
+      m_e.quantity = params[:encounter][:quantity]["#{m_e.monster.id}"]
+      m_e.save
+    end
 
     if @encounter.valid? && logged_in?
       @encounter.update(user_id: current_user.id)
@@ -94,17 +97,17 @@ class EncountersController < ApplicationController
     @encounters = Encounter.where(Encounter.arel_table[:name].lower.matches(params[:search_term].downcase))
   end
 
-  def challenge_sum(encounters_params)
+  def monster_challenge_sum(encounters_params)
     sum = 0
     monster_objs = Monster.where(id: encounters_params[:monster_ids])
+    sum += (monster_objs.size / 2.0)
     monster_objs.each do |monster|
        sum += monster.challenge_rating
     end
-    average_monster_level = (sum.to_f / monster_objs.count)
-    average_monster_level
+    sum
   end
 
-  def player_level_sum(encounters_params)
+  def player_level_avg(encounters_params)
     sum = 0
     char_objs = Character.where(id: encounters_params[:character_ids])
     char_objs.each do |char|
@@ -115,6 +118,31 @@ class EncountersController < ApplicationController
   end
 
   def generate_encounter_monsters(encounters_params)
+    difference = (monster_challenge_sum(encounters_params).to_f - player_level_avg(encounters_params).to_f)
+    case difference
+    when 3...4
+      flash[:notice] = "Difficulty: Brutal"
+    when 2...3
+      flash[:notice] = "Difficulty: Hard"
+    when 1...2
+      flash[:notice] = "Difficulty: Challenging"
+    when -1...-2
+      flash[:notice] = "Difficulty: Fairly Easy"
+    when -2...-3
+      flash[:notice] = "Difficulty: Easy"
+    when -3...-4
+      flash[:notice] = "Difficulty: Very Easy"
+    else
+      if difference >= 4
+        flash[:notice] = "Difficulty: Lethal"
+      elsif difference <= -4
+        flash[:notice] = "Difficulty: Pushover"
+      elsif difference 0...1
+      flash[:notice] = "Difficulty: Evenly Matched"
+      elsif difference 0...-1
+      flash[:notice] = "Difficulty: Evenly Matched"
+      end
+    end
   end
 
   def monsters_by_cr
