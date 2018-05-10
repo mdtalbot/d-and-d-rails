@@ -1,32 +1,32 @@
 <%= render 'partials/notices' %>
-
-<h1><%= @character.name %></h1>
+<div class="character_background">
+<br>
+<h1 class="character_show"><%= @character.name %></h1>
 <% if @character.user %>
-  <p><%= "created by: #{@character.user.username.capitalize}" %></p>
+  <span class="character_subtitles"><b>Created by:</b><em><%= " #{@character.user.username.capitalize}" %></em></span></br>
 <% end %>
-
-<ul>
-  <li>Class: <%= @character.char_class.name %></li>
-  <li>Race: <%= @character.char_race.name %></li>
-  <li>Alignment: <%= @character.alignment.name %></li>
-  <br><br>
-  <li>Level: <%= @character.level%></li>
-  <li>Experience: <%= @character.experience%></li>
-  <br><br>
-  <li>Strength: <%= @character.strength %></li>
-  <li>Dexterity: <%= @character.dexterity %></li>
-  <li>Constitution: <%= @character.constitution %></li>
-  <li>Intelligence: <%= @character.intelligence %></li>
-  <li>Wisdom: <%= @character.wisdom %></li>
-  <li>Charisma: <%= @character.charisma %></li>
-</ul>
-<p>Pets:</p>
+  <span class="character_subtitles">Class:</span> <span class="character_info"><em><%= @character.char_class.name %></em></span></br>
+  <span class="character_subtitles">Race:</span> <span class="character_info"><em><%= @character.char_race.name %></em></span></br>
+  <span class="character_subtitles">Alignment:</span> <span class="character_info"><em><%= @character.alignment.name %></em></span></br>
+  <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+  <span class="character_subtitles">Level:</span> <span class="character_info"><em><%= @character.level%></em></span></br>
+  <span class="character_subtitles">Experience:</span> <span class="character_info"><em><%= @character.experience%></em></span></br>
+  <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+  <span class="character_subtitles">Strength:</span> <span class="character_info"><em><%= @character.strength %></em></span></br>
+  <span class="character_subtitles">Dexterity:</span> <span class="character_info"><em><%= @character.dexterity %></em></span></br>
+  <span class="character_subtitles">Constitution:</span> <span class="character_info"><em><%= @character.consitution %></em></span></br>
+  <span class="character_subtitles">Intelligence:</span> <span class="character_info"><em><%= @character.intelligence %></em></span></br>
+  <span class="character_subtitles">Wisdom:</span> <span class="character_info"><em><%= @character.wisdom %></em></span></br>
+  <span class="character_subtitles">Charisma:</span> <span class="character_info"><em><%= @character.charisma %></em></span></br>
+  <% if @character.pets.count > 0 %>
+  <h3 class="character_show">Pets:</h3>
+  <% end %>
 <% @character.pets.each do |pet| %>
-<ul>
-  <li><%= pet.name %></li>
-</ul>
+  <span class="character_subtitles">Pet Name:</span> <span class="character_info"><%= pet.name %></span>
 <% end %>
-
+<br><br>
+</div>
+<br>
 <%= button_to "Edit", edit_character_path(@character), {method: :get} %><br>
 
 <% if logged_in? %>

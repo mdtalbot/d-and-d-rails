@@ -2,15 +2,15 @@
 <div class="monster_background_new">
 <br><br><br><br><br><br>
   <%= f.label "Name:", class:"monster_name_label" %>
-  <%= f.text_field :name, placeholder: "Start by Entering Monster's Name", class: "monster_name_new" %>
+  <%= f.text_field :name, class: "monster_name_new" %>
     <br><br>
   <%= f.label :size, class:"monster_subtitles_new" %>
     <br>
-  <%= f.select(:size, Monster::MONSTER_SIZES, {}, { :class => 'monster_text_field_new' }) %>
+  <%= f.select(:size, Monster::MONSTER_SIZES, {}, { :class => 'monster_selector_field_new' }) %>
     <br><br>
   <%= f.label :description, class:"monster_subtitles_new" %>
     <br>
-  <%= f.text_area :description, class: "monster_text_field_new" %>
+  <%= f.text_area :description, class: "monster_textarea_field_new" %>
   <br>
   <img class="monster_dividers_new" src = "/../assets/red-divider.png"><br>
   <%= f.label :challenge_rating, class:"monster_subtitles_new" %>
