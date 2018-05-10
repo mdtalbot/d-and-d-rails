@@ -118,25 +118,25 @@ class EncountersController < ApplicationController
   def generate_encounter_monsters(encounters_params)
     difference = (monster_challenge_sum(encounters_params).to_f - player_level_avg(encounters_params).to_f)
     case difference
-    when 3
+    when 3...4
       flash[:notice] = "Difficulty: Brutal"
-    when 2
+    when 2...3
       flash[:notice] = "Difficulty: Hard"
-    when 1
+    when 1...2
       flash[:notice] = "Difficulty: Challenging"
-    when 0
-      flash[:notice] = "Difficulty: Evenly Matched"
-    when -1
+    when -1...-2
       flash[:notice] = "Difficulty: Fairly Easy"
-    when -2
+    when -2...-3
       flash[:notice] = "Difficulty: Easy"
-    when -3
+    when -3...-4
       flash[:notice] = "Difficulty: Very Easy"
     else
       if difference >= 4
         flash[:notice] = "Difficulty: Lethal"
       elsif difference <= -4
         flash[:notice] = "Difficulty: Pushover"
+      elsif difference ( 0...1 || 0...-1 )
+      flash[:notice] = "Difficulty: Evenly Matched"
       end
     end
   end
