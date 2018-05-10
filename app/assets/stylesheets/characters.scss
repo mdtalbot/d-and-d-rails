@@ -1,9 +1,17 @@
 // Place all the styles related to the Characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1.character_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  margin-left: 40px;
+  font-size: 2.5vw;
+}
+
 img.character_name {
     width: 25%;
     height: 25%;
+    margin-left: 55px;
     object-fit: contain;
     }
 
@@ -26,4 +34,119 @@ form input[type='number'].strength {
       height: 30px;
       left: 30px
       // margin-bottom: 10px;
+    }
+div.character_background{
+    background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
+    background-repeat: no-repeat;
+    background-size: 430px 100%;
+}
+
+div.character_background_new{
+    background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
+    background-repeat: no-repeat;
+    background-size: 700px 100%;
+}
+
+h3.character_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+h3.character_show_new {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 55px;
+}
+
+span.character_subtitles{
+  font-family:"scalasansbold";
+  color: #bd0100;
+  margin-left: 40px;
+}
+
+.character_subtitles_new{
+  font-family:"scalasansbold";
+  color: #bd0100;
+  margin-left: 55px;
+  font-size: 16px;
+}
+
+span.character_info{
+  font-family:"scalasansbold";
+  color: #bd0100;
+}
+
+img.character_dividers{
+   width: 350px;
+   height: 100%;
+   margin-left: 35px;
+}
+
+img.character_dividers_new{
+   width: 606px;
+   height: 100%;
+   margin-left: 48px;
+}
+
+.character_name_label{
+      font-family:"scalasansbold";
+      color: #bd0100;
+      margin-left: 55px;
+      font-size: 24px;
+}
+
+.character_number_field {
+      width: 5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 55px;
+      background: rgba(255, 255, 255, .5)
+    }
+
+form input[type='text'].character_name_new {
+      width: 24.5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 55px;
+      background: rgba(255, 255, 255, .5)
+    }
+
+.character_input_container_new {
+  -webkit-column-count: 6;
+     -moz-column-count: 6;
+          column-count: 6;
+          max-width: 600px;
+          margin-left: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+}
+
+.character_input_inner_container {
+ flex: 1;
+ text-align:center;
+}
+
+.character_form_size_new{
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 14px;
+  margin-left: 45px;
+}
+
+form input[type='number'].character_main_stats_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 40px;
+  background: rgba(255, 255, 255, .5)
+}
+
+.character_button_new {
+      margin-left: 55px;
     }

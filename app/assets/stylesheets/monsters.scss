@@ -101,7 +101,9 @@ form input[type='text'].monster_name_new {
       height: 30px;
       font-size: 18px;
       margin-left: 55px;
+      background: rgba(255, 255, 255, .5);
     }
+
 
 .monster_name_label{
       font-family:"scalasansbold";
@@ -117,11 +119,27 @@ form input[type='text'].monster_name_new {
       margin-left: 40px;
     }
 
+.monster_selector_field_new {
+      width: 24.5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 55px;
+    }
+
 .monster_text_field_new {
       width: 24.5%;
       height: 30px;
       font-size: 18px;
       margin-left: 55px;
+      background: rgba(255, 255, 255, .5)
+    }
+
+.monster_textarea_field_new {
+      width: 30%;
+      height: 50px;
+      font-size: 14px;
+      margin-left: 55px;
+      background: rgba(255, 255, 255, .5)
     }
 
 .monster_number_field {
@@ -129,6 +147,7 @@ form input[type='text'].monster_name_new {
       height: 30px;
       font-size: 18px;
       margin-left: 55px;
+      background: rgba(255, 255, 255, .5)
     }
 .monster_button_new {
       margin-left: 55px;
@@ -221,6 +240,7 @@ form input[type='number'].monster_strength_new{
   height: 50px;
   font-size: 18px;
   margin-left: 40px;
+  background: rgba(255, 255, 255, .5)
 }
 
 form input[type='number'].monster_dexterity_new{
@@ -228,6 +248,7 @@ form input[type='number'].monster_dexterity_new{
   height: 50px;
   font-size: 18px;
   margin-left: 40px;
+  background: rgba(255, 255, 255, .5)
 }
 
 form input[type='number'].monster_constitution_new{
@@ -235,6 +256,7 @@ form input[type='number'].monster_constitution_new{
   height: 50px;
   font-size: 18px;
   margin-left: 40px;
+  background: rgba(255, 255, 255, .5)
 }
 
 form input[type='number'].monster_intelligence_new{
@@ -242,6 +264,7 @@ form input[type='number'].monster_intelligence_new{
   height: 50px;
   font-size: 18px;
   margin-left: 40px;
+  background: rgba(255, 255, 255, .5)
 }
 
 form input[type='number'].monster_wisdom_new{
@@ -249,6 +272,7 @@ form input[type='number'].monster_wisdom_new{
   height: 50px;
   font-size: 18px;
   margin-left: 50px;
+  background: rgba(255, 255, 255, .5)
 }
 
 form input[type='number'].monster_charisma_new{
@@ -256,4 +280,5 @@ form input[type='number'].monster_charisma_new{
   height: 50px;
   font-size: 18px;
   margin-left: 50px;
+  background: rgba(255, 255, 255, .5)
 }

@@ -1,51 +1,74 @@
 <%= form_for @character do |f| %>
-  <br></br>
+<div class="character_background_new">
+  <br><br><br><br>
   <img class="character_name" src = "/../assets/character_name_top.png">
     <br>
-  <%= f.text_field :name, class: "character_name" %>
+  <%= f.text_field :name, class: "character_name_new" %>
     <br>
   <img class= "character_name" src = "/../assets/character_name_bottom.png" >
     <br>
-  <%= f.label "Character Class" %>
+  <%= f.label "Character Class", class: "character_subtitles_new" %>
   <%= f.collection_select :char_class_id, @char_classes, :id, :name %>
   <br><br>
-  <%= f.label "Character Race" %>
+  <%= f.label "Character Race", class: "character_subtitles_new" %>
   <%= f.collection_select :char_race_id, @char_races, :id, :name %>
   <br><br>
-  <%= f.label "Alignment" %>
+  <%= f.label "Alignment", class: "character_subtitles_new" %>
   <%= f.collection_select :alignment_id, @alignments, :id, :name %>
   <br><br>
-  <%= f.label :level %>
-  <%= f.number_field :level%>
-  <br>
-  <%= f.label :experience %>
-  <%= f.number_field :experience %>
+  <img class="character_dividers_new" src = "/../assets/red-divider.png"><br>
+  <%= f.label :level, class: "character_subtitles_new" %><br>
+  <%= f.number_field :level, class: "character_number_field" %>
   <br><br>
-  <%= f.label :strength %>
+  <%= f.label :experience, class: "character_subtitles_new" %><br>
+  <%= f.number_field :experience, class: "character_number_field" %>
+  <br><br>
+    <img class="character_dividers_new" src = "/../assets/red-divider.png"><br>
+  <div class="character_input_container_new">
+      <div class="character_input_inner_container">
+  <%= f.label :strength, class: "character_form_size_new" %>
     <br>
-  <%= f.number_field :strength %>
+  <%= f.number_field :strength, class: "character_main_stats_new" %>
+      </div>
     <br><br><br>
-  <%= f.label :dexterity %>
+      <div class="character_input_inner_container">
+  <%= f.label :dexterity, class: "character_form_size_new" %>
     <br>
-  <%= f.number_field :dexterity %>
+  <%= f.number_field :dexterity, class: "character_main_stats_new" %>
+      </div>
     <br><br><br>
-  <%= f.label "Constitution" %>
+      <div class="character_input_inner_container">
+  <%= f.label "Constitution", class: "character_form_size_new" %>
     <br>
-  <%= f.number_field :constitution %>
+  <%= f.number_field :consitution, class: "character_main_stats_new" %>
+      </div>
     <br><br><br>
-  <%= f.label :intelligence %>
+      <div class="character_input_inner_container">
+  <%= f.label :intelligence, class: "character_form_size_new" %>
     <br>
-  <%= f.number_field :intelligence %>
+  <%= f.number_field :intelligence, class: "character_main_stats_new" %>
+      </div>
     <br><br><br>
-  <%= f.label :wisdom %>
+      <div class="character_input_inner_container">
+  <%= f.label :wisdom, class: "character_form_size_new" %>
     <br>
-  <%= f.number_field :wisdom %>
+  <%= f.number_field :wisdom, class: "character_main_stats_new" %>
+      </div>
     <br><br><br>
-  <%= f.label :charisma %>
+      <div class="character_input_inner_container">
+  <%= f.label :charisma, class: "character_form_size_new" %>
     <br>
-  <%= f.number_field :charisma %>
-    <br><br><br>
-  <%= f.submit %>
+  <%= f.number_field :charisma, class: "character_main_stats_new" %>
+      </div>
+    <br><br>
+  </div>
+  <br>
+  <img class="character_dividers_new" src = "/../assets/red-divider.png">
+  <br><br><br>
+  <%= f.submit class: "character_button_new" %>
+  <br>
 <% end %>
+<br><br><br>
+</div>
 
 <%= button_to "Back to Homepage", root_path, {method: :get} %><br>
