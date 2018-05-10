@@ -135,7 +135,9 @@ class EncountersController < ApplicationController
         flash[:notice] = "Difficulty: Lethal"
       elsif difference <= -4
         flash[:notice] = "Difficulty: Pushover"
-      elsif difference ( 0...1 || 0...-1 )
+      elsif difference 0...1
+      flash[:notice] = "Difficulty: Evenly Matched"
+      elsif difference 0...-1
       flash[:notice] = "Difficulty: Evenly Matched"
       end
     end
