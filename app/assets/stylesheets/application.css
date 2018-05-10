@@ -51,3 +51,21 @@
    font-family: 'scalasansbold';
    font-weight: bold;
  }
+
+ .back_to_homepage_button{
+   background-color: black;
+   color: white;
+   font-weight: bold;
+ }
+
+ .create_new_button{
+   background-color: grey;
+   color: #bd0100;
+   font-weight: bold;
+ }
+
+ .delete_button{
+   background-color: red;
+   color: yellow;
+   font-weight: bold;
+ }

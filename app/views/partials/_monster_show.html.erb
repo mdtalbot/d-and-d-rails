@@ -26,12 +26,11 @@
 <br><br>
 </div>
 <br>
-<%= button_to "Edit Monster", edit_monster_path(@monster), {method: :get} %><br>
-
-<%= button_to "Delete This Monster", @monster, {method: :delete, :onclick => "return confirm('Really delete this monster?')"} %><br>
+<%= button_to "Edit Monster", edit_monster_path(@monster), :method => :get, :class => "create_new_button" %><br>
+<%= button_to "Delete This Monster", @monster, {method: :delete, :class => "delete_button", :onclick => "return confirm('Really delete this monster?')"} %><br>
 <br>
 
 <% if logged_in? %>
-  <%= button_to "<< Return to My Monsters", my_monsters_path, {method: :get} %><br>
+  <%= button_to "<< Return to My Monsters", my_monsters_path, :method => :get, :class => 'back_to_homepage_button' %><br>
 <% end %>
-<%= button_to "<< Return to All Monsters", monsters_path, {method: :get} %><br>
+<%= button_to "<< Return to All Monsters", monsters_path, :method => :get, :class => 'back_to_homepage_button' %><br>

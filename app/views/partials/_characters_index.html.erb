@@ -24,6 +24,6 @@
 </ul>
 <br></br>
 
-<%= button_to "Create New Character", new_character_path, {method: :get} %><br>
+<%= button_to "Create New Character", new_character_path, :method => :get, :class => 'create_new_button' %><br>
 
-<%= button_to "Back to Homepage", root_path, {method: :get} %>
+<%= button_to "<< Back to Homepage", root_path, :method => :get, :class => 'back_to_homepage_button' %>

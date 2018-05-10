@@ -151,6 +151,9 @@ form input[type='text'].monster_name_new {
     }
 .monster_button_new {
       margin-left: 55px;
+      background-color: grey;
+      color: #bd0100;
+      font-weight: bold;
     }
 
 .checkboxes_container {
@@ -281,4 +284,10 @@ form input[type='number'].monster_charisma_new{
   font-size: 18px;
   margin-left: 50px;
   background: rgba(255, 255, 255, .5)
+}
+
+.btn{
+  background-color: black;
+  color: white;
+  font-weight: bold;
 }
