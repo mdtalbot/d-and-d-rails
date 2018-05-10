@@ -6,19 +6,54 @@
 <% end %>
 <p><%= @encounter.content %></p>
 
-<h4><%= @encounter.difficulty %></h4>
+<h2><%= @encounter.difficulty %></h2>
 
-<ul>
   <% @encounter.characters.each do |character| %>
-    <li><%= character.name %></li>
+  <div class="character_background">
+    <br>
+    <h3 class="character_show"><%= character.name %></h3>
+    <span class="character_subtitles">Class:</span> <span class="character_info"><em><%= character.char_class.name %></em></span></br>
+    <span class="character_subtitles">Race:</span> <span class="character_info"><em><%= character.char_race.name %></em></span></br>
+    <span class="character_subtitles">Alignment:</span> <span class="character_info"><em><%= character.alignment.name %></em></span></br>
+    <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+    <span class="character_subtitles">Level:</span> <span class="character_info"><em><%= character.level%></em></span></br>
+    <span class="character_subtitles">Experience:</span> <span class="character_info"><em><%= character.experience%></em></span></br>
+    <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+    <span class="character_subtitles">Strength:</span> <span class="character_info"><em><%= character.strength %></em></span></br>
+    <span class="character_subtitles">Dexterity:</span> <span class="character_info"><em><%= character.dexterity %></em></span></br>
+    <span class="character_subtitles">Constitution:</span> <span class="character_info"><em><%= character.constitution %></em></span></br>
+    <span class="character_subtitles">Intelligence:</span> <span class="character_info"><em><%= character.intelligence %></em></span></br>
+    <span class="character_subtitles">Wisdom:</span> <span class="character_info"><em><%= character.wisdom %></em></span></br>
+    <span class="character_subtitles">Charisma:</span> <span class="character_info"><em><%= character.charisma %></em></span></br>
+    <br><br>
+    </div>
   <% end %>
-</ul>
-<p>vs.</p>
-<ul>
+<h3 class="versus"><center>vs.</center></h3>
   <% @encounter.monster_encounters.each do |m_e| %>
-    <li><%= m_e.monster.name %> (<%= m_e.quantity %>)</li>
+    <div class="monster_background">
+    <br><br>
+    <h3 class="character_show"><%= m_e.monster.name %> <b>(<%= m_e.quantity %>)</b></h3>
+    <span class="monster_subtitles"><b>Description:</b></span> <span class="monster_info"><em><%= m_e.monster.description %></em></span></br>
+    <img class="monster_dividers" src = "/../assets/red-divider.png"><br>
+    <span class="monster_subtitles"><b>Size:</b></span> <span class="monster_info"><%= m_e.monster.size %></span></br>
+    <span class="monster_subtitles"><b>Challenge Rating:</b></span> <span class="monster_info"><%= m_e.monster.challenge_rating %></span></br>
+    <span class="monster_subtitles"><b>Armor Class:</b></span> <span class="monster_info"><%= m_e.monster.armor_class %></span></br>
+    <span class="monster_subtitles"><b>Hit Points:</b></span> <span class="monster_info"><%= m_e.monster.hit_points %></span></br>
+    <img class="monster_dividers" src = "/../assets/red-divider.png"><br>
+    <span class="monster_subtitles"><b>Strength:</b></span> <span class="monster_info"><em><%= m_e.monster.strength %></em></span></br>
+    <span class="monster_subtitles"><b>Dexterity:</b></span> <span class="monster_info"><em><%= m_e.monster.dexterity %></em></span></br>
+    <span class="monster_subtitles"><b>Constitution:</b></span> <span class="monster_info"><em><%= m_e.monster.constitution %></em></span></br>
+    <span class="monster_subtitles"><b>Intelligence:</b></span> <span class="monster_info"><em><%= m_e.monster.intelligence %></em></span></br>
+    <span class="monster_subtitles"><b>Wisdom:</b></span> <span class="monster_info"><em><%= m_e.monster.wisdom %></em></span></br>
+    <span class="monster_subtitles"><b>Charisma:</b></span> <span class="monster_info"><em><%= m_e.monster.charisma %></em></span></br>
+    <span class="monster_subtitles"><b>Constituion Saving Throw:</b></span> <span class="monster_info"><em><%= m_e.monster.constitution_save %></em></span></br>
+    <span class="monster_subtitles"><b>Intelligence Saving Throw:</b></span> <span class="monster_info"><em><%= m_e.monster.intelligence_save %></em></span></br>
+    <span class="monster_subtitles"><b>Wisdom Saving Throw:</b></span> <span class="monster_info"><em><%= m_e.monster.wisdom_save %></em></span></br>
+    <span class="monster_subtitles"><b>History:</b></span> <span class="monster_info"><em><%= m_e.monster.history %></em></span></br>
+    <span class="monster_subtitles"><b>Perception:</b></span> <span class="monster_info"><em><%= m_e.monster.perception %></em></span></br>
+    <br><br>
+    </div>
   <% end %>
-</ul>
 
 <%= button_to "Edit", edit_encounter_path(@encounter), {method: :get} %><br>
 

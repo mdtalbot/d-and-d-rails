@@ -73,3 +73,86 @@ p.errors {
 .checkboxes_inner_container {
   flex: 1;
 }
+
+div.monster_background{
+    background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
+    background-repeat: no-repeat;
+    background-size: 430px 100%;
+}
+
+h1.monster_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  margin-left: 40px;
+  font-size: 2.5vw;
+}
+
+h3.monster_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+img.monster_dividers{
+   width: 350px;
+   height: 100%;
+   margin-left: 35px;
+}
+
+span.monster_subtitles{
+  font-family:"scalasansbold";
+  color: #bd0100;
+  margin-left: 40px;
+}
+
+span.monster_info{
+  font-family:"scalasansbold";
+  color: #bd0100;
+}
+
+h1.character_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  margin-left: 40px;
+  font-size: 2.5vw;
+}
+
+h3.character_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+div.character_background{
+    background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
+    background-repeat: no-repeat;
+    background-size: 430px 100%;
+}
+
+span.character_subtitles{
+  font-family:"scalasansbold";
+  color: #bd0100;
+  margin-left: 40px;
+}
+
+img.character_dividers{
+   width: 350px;
+   height: 100%;
+   margin-left: 35px;
+}
+
+span.character_info{
+  font-family:"scalasansbold";
+  color: #bd0100;
+}
+
+h3.versus{
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 60px;
+  font-weight: bold;
+  align: center;
+}
