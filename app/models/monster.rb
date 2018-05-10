@@ -9,4 +9,7 @@ class Monster < ApplicationRecord
   def quantity_by_encounter(encounter)
     encounter.monster_encounters.find_by(monster_id: self.id).quantity
   end
-end
+
+  MONSTER_SIZES = ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
+
+  end

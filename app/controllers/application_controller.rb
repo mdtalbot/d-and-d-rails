@@ -38,12 +38,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-private
+  def analytics
+    analytics_numbers
+    all_classes_for_analytics
+  end
 
-def analytics
-  analytics_numbers
-  all_classes_for_analytics
-end
+private
 
 def analytics_numbers
   @monster_numbers =

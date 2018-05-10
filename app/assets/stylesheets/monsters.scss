@@ -1,54 +1,88 @@
 // Place all the styles related to the Monsters controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@font-face {
-  font-family: "Mrs Eaves";
-  src: url(/assets/mrs_eavessmallcaps_regular-webfont.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: 'scala_sans_scregular';
-    src: url('scala-sans-regular-sc_39565-webfont.woff2') format('woff2'),
-         url('scala-sans-regular-sc_39565-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'scalasansbold';
-    src: url('scala-sans-bold-1361514697-webfont.woff2') format('woff2'),
-         url('scala-sans-bold-1361514697-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'scala_sansregular';
-    src: url('scalasans-regular-webfont.woff2') format('woff2'),
-         url('scalasans-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 h1.monster_show {
   font-family:"Mrs Eaves";
   color: #bd0100;
   margin-left: 40px;
+  font-size: 2.5vw;
+}
+
+h1 {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  margin-left: 25px;
+  font-size: 3vw;
+}
+
+.monster_form_name {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 22px;
+}
+
+.monster_form_size{
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 18px;
+}
+
+.monster_form_size_new{
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 14px;
+  margin-left: 45px;
+}
+
+h3.monster_show {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+h3.monster_show_new {
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 55px;
 }
 
 div.monster_background{
     background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
     background-repeat: no-repeat;
-    background-size: 400px 538px;
+    background-size: 430px 100%;
+}
+
+div.monster_background_new{
+    background-image: url("https://i.pinimg.com/originals/25/bd/5e/25bd5ef9cc5f4224106cc99b8c7cd0ce.png");
+    background-repeat: no-repeat;
+    background-size: 700px 100%;
 }
 
 span.monster_subtitles{
   font-family:"scalasansbold";
   color: #bd0100;
   margin-left: 40px;
+}
+
+.monster_subtitles_new{
+  font-family:"scalasansbold";
+  color: #bd0100;
+  margin-left: 55px;
+  font-size: 16px;
+}
+
+img.monster_dividers{
+   width: 350px;
+   height: 100%;
+   margin-left: 35px;
+}
+
+img.monster_dividers_new{
+   width: 606px;
+   height: 100%;
+   margin-left: 48px;
 }
 
 span.monster_info{
@@ -60,6 +94,44 @@ form input[type='text'].monster_name {
       width: 24.5%;
       height: 30px;
       font-size: 18px;
+    }
+
+form input[type='text'].monster_name_new {
+      width: 24.5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 55px;
+    }
+
+.monster_name_label{
+      font-family:"scalasansbold";
+      color: #bd0100;
+      margin-left: 55px;
+      font-size: 24px;
+}
+
+.monster_text_field {
+      width: 24.5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 40px;
+    }
+
+.monster_text_field_new {
+      width: 24.5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 55px;
+    }
+
+.monster_number_field {
+      width: 5%;
+      height: 30px;
+      font-size: 18px;
+      margin-left: 55px;
+    }
+.monster_button_new {
+      margin-left: 55px;
     }
 
 .checkboxes_container {
@@ -80,9 +152,32 @@ form input[type='text'].monster_name {
           max-width: 200px;
 }
 
+.monster_input_container_new {
+  -webkit-column-count: 6;
+     -moz-column-count: 6;
+          column-count: 6;
+          max-width: 600px;
+          margin-left: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+}
+
 .monster_input_inner_container {
  flex: 1;
+ text-align:center;
+}
+
+.monster_input_inner_container_new {
+ flex: 1;
  text-align: center;
+}
+
+form input[type='h1']{
+  font-family:"Mrs Eaves";
+  color: #bd0100;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 form input[type='number'].monster_strength{
@@ -119,4 +214,46 @@ form input[type='number'].monster_charisma{
   width: 50px;
   height: 50px;
   font-size: 18px;
+}
+
+form input[type='number'].monster_strength_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 40px;
+}
+
+form input[type='number'].monster_dexterity_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 40px;
+}
+
+form input[type='number'].monster_constitution_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 40px;
+}
+
+form input[type='number'].monster_intelligence_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 40px;
+}
+
+form input[type='number'].monster_wisdom_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 50px;
+}
+
+form input[type='number'].monster_charisma_new{
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 50px;
 }

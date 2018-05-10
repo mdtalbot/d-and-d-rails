@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+ // You can use Sass (SCSS) here: http://sass-lang.com/
+ @font-face {
+   font-family: "Mrs Eaves";
+   src: url(/assets/mrs_eavessmallcaps_regular-webfont.ttf) format("truetype");
+ }
+
+ @font-face {
+     font-family: 'scala_sans_scregular';
+     src: url('scala-sans-regular-sc_39565-webfont.woff2') format('woff2'),
+          url('scala-sans-regular-sc_39565-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+ @font-face {
+     font-family: 'scalasansbold';
+     src: url('scala-sans-bold-1361514697-webfont.woff2') format('woff2'),
+          url('scala-sans-bold-1361514697-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+ @font-face {
+     font-family: 'scala_sansregular';
+     src: url('scalasans-regular-webfont.woff2') format('woff2'),
+          url('scalasans-regular-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+ .analytics_number{
+   font-size: 18px;
+   font-family: 'scalasansbold';
+   font-weight: bold;
+ }
