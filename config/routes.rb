@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get "/monsters/search", to: "monsters#search", as: "monsters_search"
   resources :monsters
   get "/encounters/search", to: "encounters#search", as: "encounters_search"
-  get "/encounters/new/preview", to: "encounters#preview", as: "encounter_preview"
+  get "/encounters/preview", to: "encounters#preview", as: "encounter_preview"
+  get "/encounters/:id/edit/preview", to: "encounters#edit_preview", as: "edit_encounter_preview"
   resources :encounters
 
 

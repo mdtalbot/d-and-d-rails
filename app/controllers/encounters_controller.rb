@@ -60,10 +60,17 @@ class EncountersController < ApplicationController
     end
   end
 
+  def edit_preview
+    @encounter = Encounter.find(params[:id])
+    @encounter.monster_ids = params[:encounter][:monster_ids]
+    @encounter.save
+  end
+
   def update
     find_encounter_by_id # Sets encounter to @encounter
 
     if @encounter.update(encounters_params)
+      set_monster_quantities(@encounter)
       redirect_to @encounter
     else
       flash[:errors] = @encounter.errors.full_messages
@@ -155,6 +162,7 @@ class EncountersController < ApplicationController
       elsif difference <= -4
         encounter.difficulty = "Difficulty: Pushover"
       else
+        flash[:notice] = "difference = #{difference}"
         encounter.difficulty = "Difficulty: Evenly Matched"
       end
     end
