@@ -4,7 +4,7 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :strength
       t.integer :dexterity
-      t.integer :consitution
+      t.integer :constitution
       t.integer :intelligence
       t.integer :wisdom
       t.integer :charisma

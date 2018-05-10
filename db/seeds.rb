@@ -91,8 +91,8 @@ Alignment.create(name: "Neutral Evil", description: "Neutral evil (NE) is the al
 Alignment.create(name: "Chaotic Evil", description: "Chaotic evil (CE) creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust. Demons, red dragons, and orcs are chaotic evil.")
 
 #Sample character seeds
-Character.create(name: "Greg the Old", strength: 14, dexterity: 12, consitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 8, alignment_id: 5)
-Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, consitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12, alignment_id: 3)
+Character.create(name: "Greg the Old", strength: 14, dexterity: 12, constitution:12, intelligence: 11, wisdom: 16, charisma: 13, char_race_id: 12, char_class_id: 8, alignment_id: 5)
+Character.create(name: "Lucinda Hogwild", strength: 11, dexterity: 13, constitution:12, intelligence: 16, wisdom: 14, charisma: 14, char_race_id: 7, char_class_id: 12, alignment_id: 3)
 
 #Sample Encounter seeds
 Encounter.create(name: "Everybody's Encounter", content: "It's for all of us!", monster_ids: ["1", "10", "11"], character_ids: ["1"])
