@@ -62,8 +62,7 @@ class EncountersController < ApplicationController
 
   def edit_preview
     @encounter = Encounter.find(params[:id])
-    @encounter.monster_ids = params[:encounter][:monster_ids]
-    @encounter.save
+    @encounter.update(encounters_params)
   end
 
   def update
@@ -71,6 +70,7 @@ class EncountersController < ApplicationController
 
     if @encounter.update(encounters_params)
       set_monster_quantities(@encounter)
+      calculate_difficulty(@encounter)
       redirect_to @encounter
     else
       flash[:errors] = @encounter.errors.full_messages
