@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_05_10_195724) do
     t.string "name"
     t.integer "strength"
     t.integer "dexterity"
-    t.integer "consitution"
+    t.integer "constitution"
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"

@@ -1,4 +1,4 @@
-<%= form_for @encounter, method: :get, url: encounter_preview_path do |f| %>
+<%= form_for @encounter, method: :get, url: url do |f| %>
 
   <%= f.label :name %>
     <br>
@@ -8,6 +8,11 @@
     <br>
   <%= f.text_area :content, class: "encounter_description" %>
     <br></br>
+
+  <% @encounter.monster_encounters.each do |m_e| %>
+    <%= f.hidden_field :monster_quantity, {name: "encounter[quantity][#{m_e.monster.id}]", value: m_e.quantity} %>
+  <% end %>
+
   <%= f.label "Very Easy Monsters", class: "very_easy_monster_type_titles"%>
   <div class="checkboxes_container">
   <%= f.collection_check_boxes :monster_ids, @very_easy_monsters, :id, :name do |b| %>
