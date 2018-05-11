@@ -28,7 +28,7 @@
 
   <ul>
     <% @encounter.monster_encounters.each do |m_e| %>
-      <li><%= m_e.monster.name %><br>
+      <li><%= m_e.monster.monster_name_and_cr %><br>
         <%= f.number_field :monster_quantity, {name: "encounter[quantity][#{m_e.monster.id}]", value: m_e.quantity} %></li>
     <% end %>
   </ul><br>

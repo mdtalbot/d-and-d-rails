@@ -27,7 +27,7 @@
 </div>
 <br>
 
-<% if logged_in? %>
+<% if permitted?(@monster.user) %>
   <%= button_to "Edit Monster", edit_monster_path(@monster), :method => :get, :class => "create_new_button" %>
 <% end %><br>
 

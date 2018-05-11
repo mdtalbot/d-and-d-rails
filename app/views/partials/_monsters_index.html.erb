@@ -12,11 +12,11 @@
 <div class="checkboxes_container">
   <% @monsters.each do |monster| %>
     <div class="checkboxes_inner_container">
-    <% if monster.user == current_user && logged_in? %>
-      <div class="monster"><%= link_to monster.name, my_monster_path(monster.user_id, monster) %><%= " (#{monster.description})" %></div><br>
-    <% else %>
-      <div class= "monster"><%= link_to monster.name, monster_path(monster) %><%= " (#{monster.description})" %></div>
-    <% end %>
+      <% if permitted?(monster.user) %>
+        <div class="monster"><%= link_to monster.name, my_monster_path(monster.user_id, monster) %><%= " [HB] (#{monster.description})" %></div><br>
+      <% else %>
+        <div class= "monster"><%= link_to monster.name, monster_path(monster) %><%= " (#{monster.description})" %></div>
+      <% end %>
     </div>
   <% end %>
 </div>
