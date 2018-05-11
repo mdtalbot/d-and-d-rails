@@ -5,7 +5,7 @@ class Encounter < ApplicationRecord
   has_many :monsters, through: :monster_encounters
   belongs_to :user, optional: true
 
-  validates :name, :content, presence: true
+  validates :name, :content, :characters, :monsters, presence: true
   validates :name, uniqueness: true
 
   def monster_quantity(num)

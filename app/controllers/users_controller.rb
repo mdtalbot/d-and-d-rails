@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def encounters_index
     set_user_by_current_user
     if logged_in?

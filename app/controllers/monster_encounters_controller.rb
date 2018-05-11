@@ -1,2 +1,0 @@
-class MonsterEncountersController < ApplicationController
-end

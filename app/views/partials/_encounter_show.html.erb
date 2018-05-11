@@ -1,24 +1,44 @@
 <%= render 'partials/notices' %>
 
-<h1><%= @encounter.name %></h1>
+<h1 class="encounter_show"><%= @encounter.name %></h1>
 <% if @encounter.user %>
-  <p><%= "Created by: #{@encounter.user.username.capitalize}" %></p>
+  <p><b>Created by:</b><%= " #{@encounter.user.username.capitalize}" %></p>
 <% end %>
-<p><%= @encounter.content %></p>
+<p><b>Description:</b> <em><%= @encounter.content %></em></p>
 
 <h2><%= @encounter.difficulty %></h2>
 
+  <% if @encounter.characters.count % 2 == 0 %>
+    <div class="two_encounter_columns">
+  <% elsif @encounter.characters.count % 3 == 0 %>
+    <div class="three_encounter_columns">
+  <% elsif @encounter.characters.count == 1 %>
+    <div class="one_encounter_columns">
+  <% end %>
+
   <% @encounter.characters.each do |character| %>
-  <div class="character_background">
+    <% if @encounter.characters.count % 3 == 0 %>
+    <div class="three_character_background">
+    <% else %>
+    <div class="character_background">
+    <% end %>
     <br>
     <h3 class="character_show"><%= character.name %></h3>
     <span class="character_subtitles">Class:</span> <span class="character_info"><em><%= character.char_class.name %></em></span></br>
     <span class="character_subtitles">Race:</span> <span class="character_info"><em><%= character.char_race.name %></em></span></br>
     <span class="character_subtitles">Alignment:</span> <span class="character_info"><em><%= character.alignment.name %></em></span></br>
-    <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+      <% if @encounter.characters.count % 3 == 0 %>
+      <img class="three_character_dividers" src = "/../assets/red-divider.png"><br>
+      <% else %>
+      <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+      <% end %>
     <span class="character_subtitles">Level:</span> <span class="character_info"><em><%= character.level%></em></span></br>
     <span class="character_subtitles">Experience:</span> <span class="character_info"><em><%= character.experience%></em></span></br>
-    <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+      <% if @encounter.characters.count % 3 == 0 %>
+      <img class="three_character_dividers" src = "/../assets/red-divider.png"><br>
+      <% else %>
+      <img class="character_dividers" src = "/../assets/red-divider.png"><br>
+      <% end %>
     <span class="character_subtitles">Strength:</span> <span class="character_info"><em><%= character.strength %></em></span></br>
     <span class="character_subtitles">Dexterity:</span> <span class="character_info"><em><%= character.dexterity %></em></span></br>
     <span class="character_subtitles">Constitution:</span> <span class="character_info"><em><%= character.constitution %></em></span></br>
@@ -28,18 +48,46 @@
     <br><br>
     </div>
   <% end %>
+  </div>
+
 <h3 class="versus"><center>vs.</center></h3>
+
+  <% if @encounter.monster_encounters.count % 2 == 0 %>
+    <div class="two_encounter_columns">
+  <% elsif @encounter.monster_encounters.count % 3 == 0 %>
+    <div class="three_encounter_columns">
+  <% elsif @encounter.monster_encounters.count == 1 %>
+    <div class="one_encounter_columns">
+  <% end %>
+
   <% @encounter.monster_encounters.each do |m_e| %>
+    <% if @encounter.monster_encounters.count % 3 == 0 %>
+      <div class="three_encounter_container">
+    <% else %>
+      <div class="encounter_container">
+    <% end %>
+    <% if @encounter.monster_encounters.count % 3 == 0 %>
+    <div class="three_monster_background">
+    <% else %>
     <div class="monster_background">
+    <% end %>
     <br><br>
     <h3 class="character_show"><%= m_e.monster.name %> <b>(<%= m_e.quantity %>)</b></h3>
     <span class="monster_subtitles"><b>Description:</b></span> <span class="monster_info"><em><%= m_e.monster.description %></em></span></br>
+    <% if @encounter.characters.count % 3 == 0 %>
+    <img class="three_monster_dividers" src = "/../assets/red-divider.png"><br>
+    <% else %>
     <img class="monster_dividers" src = "/../assets/red-divider.png"><br>
+    <% end %>
     <span class="monster_subtitles"><b>Size:</b></span> <span class="monster_info"><%= m_e.monster.size %></span></br>
     <span class="monster_subtitles"><b>Challenge Rating:</b></span> <span class="monster_info"><%= m_e.monster.challenge_rating %></span></br>
     <span class="monster_subtitles"><b>Armor Class:</b></span> <span class="monster_info"><%= m_e.monster.armor_class %></span></br>
     <span class="monster_subtitles"><b>Hit Points:</b></span> <span class="monster_info"><%= m_e.monster.hit_points %></span></br>
+    <% if @encounter.monster_encounters.count % 3 == 0 %>
+    <img class="three_monster_dividers" src = "/../assets/red-divider.png"><br>
+    <% else %>
     <img class="monster_dividers" src = "/../assets/red-divider.png"><br>
+    <% end %>
     <span class="monster_subtitles"><b>Strength:</b></span> <span class="monster_info"><em><%= m_e.monster.strength %></em></span></br>
     <span class="monster_subtitles"><b>Dexterity:</b></span> <span class="monster_info"><em><%= m_e.monster.dexterity %></em></span></br>
     <span class="monster_subtitles"><b>Constitution:</b></span> <span class="monster_info"><em><%= m_e.monster.constitution %></em></span></br>
@@ -53,15 +101,17 @@
     <span class="monster_subtitles"><b>Perception:</b></span> <span class="monster_info"><em><%= m_e.monster.perception %></em></span></br>
     <br><br>
     </div>
+  </div>
   <% end %>
+  </div>
 
 <% if permitted?(@encounter.user) %>
   <%= button_to "Edit", edit_encounter_path(@encounter), {method: :get} %>
 <% end %><br>
 
 <% if logged_in? %>
-  <%= button_to "<< Return to My Encounters", my_encounters_path, {method: :get} %><br>
+  <%= button_to "<< Return to My Encounters", my_encounters_path, :method => :get, :class => 'back_to_homepage_button' %><br>
 <% end %>
-<%= button_to "<< Return to All Encounters", encounters_path, {method: :get} %><br>
+<%= button_to "<< Return to All Encounters", encounters_path, :method => :get, :class => 'back_to_homepage_button' %><br>
 
-<%= button_to "Delete This Encounter", @encounter, {method: :delete, :onclick => "return confirm('Really delete this encounter?')"} %><br>
+<%= button_to "Delete This Encounter", @encounter, {method: :delete, :onclick => "return confirm('Really delete this encounter?')", :class => 'delete_button'} %><br>
