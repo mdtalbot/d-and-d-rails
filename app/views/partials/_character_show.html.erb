@@ -14,7 +14,7 @@
   <img class="character_dividers" src = "/../assets/red-divider.png"><br>
   <span class="character_subtitles">Strength:</span> <span class="character_info"><em><%= @character.strength %></em></span></br>
   <span class="character_subtitles">Dexterity:</span> <span class="character_info"><em><%= @character.dexterity %></em></span></br>
-  <span class="character_subtitles">Constitution:</span> <span class="character_info"><em><%= @character.consitution %></em></span></br>
+  <span class="character_subtitles">Constitution:</span> <span class="character_info"><em><%= @character.constitution %></em></span></br>
   <span class="character_subtitles">Intelligence:</span> <span class="character_info"><em><%= @character.intelligence %></em></span></br>
   <span class="character_subtitles">Wisdom:</span> <span class="character_info"><em><%= @character.wisdom %></em></span></br>
   <span class="character_subtitles">Charisma:</span> <span class="character_info"><em><%= @character.charisma %></em></span></br>
@@ -27,7 +27,10 @@
 <br><br>
 </div>
 <br>
-<%= button_to "Edit", edit_character_path(@character), {method: :get} %><br>
+
+<% if logged_in? %>
+  <%= button_to "Edit", edit_character_path(@character), {method: :get} %>
+<% end %><br>
 
 <% if logged_in? %>
   <%= button_to "<< Return to My Characters", my_characters_path, {method: :get} %><br>

@@ -162,7 +162,6 @@ class EncountersController < ApplicationController
       elsif difference <= -4
         encounter.difficulty = "Difficulty: Pushover"
       else
-        flash[:notice] = "difference = #{difference}"
         encounter.difficulty = "Difficulty: Evenly Matched"
       end
     end

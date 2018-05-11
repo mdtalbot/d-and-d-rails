@@ -38,6 +38,11 @@ class MonstersController < ApplicationController
 
   def edit
     find_monster_by_id # Assigns monster to @monster
+
+    if !permitted?(@monster.user)
+      flash[:notice] = "You are not authorized to edit this item."
+      redirect_to @monster
+    end
   end
 
   def update

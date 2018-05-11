@@ -26,7 +26,11 @@
 <br><br>
 </div>
 <br>
-<%= button_to "Edit Monster", edit_monster_path(@monster), :method => :get, :class => "create_new_button" %><br>
+
+<% if logged_in? %>
+  <%= button_to "Edit Monster", edit_monster_path(@monster), :method => :get, :class => "create_new_button" %>
+<% end %><br>
+
 <%= button_to "Delete This Monster", @monster, {method: :delete, :class => "delete_button", :onclick => "return confirm('Really delete this monster?')"} %><br>
 <br>
 

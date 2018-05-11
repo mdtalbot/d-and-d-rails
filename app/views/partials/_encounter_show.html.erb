@@ -20,7 +20,9 @@
   <% end %>
 </ul>
 
-<%= button_to "Edit", edit_encounter_path(@encounter), {method: :get} %><br>
+<% if logged_in? %>
+  <%= button_to "Edit", edit_encounter_path(@encounter), {method: :get} %>
+<% end %><br>
 
 <% if logged_in? %>
   <%= button_to "<< Return to My Encounters", my_encounters_path, {method: :get} %><br>
