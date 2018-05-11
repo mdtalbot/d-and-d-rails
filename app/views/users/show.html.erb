@@ -1,7 +1,10 @@
-<% if session[:user_id] == @user.id %>
-  <%= button_to "My Encounters", my_encounters_path, {method: :get} %><br>
-  <%= button_to "My Characters", my_characters_path, {method: :get} %><br>
-  <%= button_to "My Monsters", my_monsters_path, {method: :get} %><br>
-    <br><br><br>
-  <%= button_to "Delete my Account", @user, {method: :delete, :onclick => "return confirm('Really delete your Account??\nThis action cannot be undone!')"} %><br>
-<% end %>
+<%# if session[:user_id] == @user.id %>
+  <div class="wrapper">
+  <div class="grid-container">
+  <div class="grid-item"><%= button_to "My Encounters", my_encounters_path, {method: :get, :class => "user_show_button"} %></div>
+  <div class="grid-item"><%= button_to "My Characters", my_characters_path, {method: :get, :class => "user_show_button"} %></div>
+  <div class="grid-item"><%= button_to "My Monsters", my_monsters_path, {method: :get, :class => "user_show_button"} %></div>
+  <div class="grid-item"><%= button_to "Delete my Account", @user, {method: :delete, :class => "user_show_button", :onclick => "return confirm('Really delete your Account??\nThis action cannot be undone!')"} %></div>
+<%# end %>
+</div>
+</div>

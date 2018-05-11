@@ -69,3 +69,22 @@
    color: yellow;
    font-weight: bold;
  }
+
+ .user_show_button{
+   background: url("https://orig00.deviantart.net/8a74/f/2007/223/b/4/old_crackly_parchment_texture_by_teeth_man.png") no-repeat scroll 0 0 transparent;
+   border: none;
+   font-family: "Mrs Eaves";
+   color: black;
+   padding: 1em;
+   margin: 3em;
+   border-radius: 20%;
+   font-weight: bold
+ }
+
+ .user_show_button:hover {
+  color: white
+ }
+
+ .user_show_button:visited {
+   color: red
+ }
