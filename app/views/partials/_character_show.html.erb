@@ -29,12 +29,12 @@
 <br>
 
 <% if permitted?(@character.user) %>
-  <%= button_to "Edit", edit_character_path(@character), {method: :get} %>
+  <%= button_to "Edit", edit_character_path(@character), :method => :get, :class => 'back_to_homepage_button' %>
 <% end %><br>
 
 <% if logged_in? %>
-  <%= button_to "<< Return to My Characters", my_characters_path, {method: :get} %><br>
+  <%= button_to "<< Return to My Characters", my_characters_path, :method => :get, :class => 'back_to_homepage_button' %><br>
 <% end %>
-<%= button_to "<< Return to All Characters", characters_path, {method: :get} %><br>
+<%= button_to "<< Return to All Characters", characters_path, :method => :get, :class => 'back_to_homepage_button'  %><br>
 
-<%= button_to "Delete This Character", @character, {method: :delete, :onclick => "return confirm('Really delete this character?')"} %><br>
+<%= button_to "Delete This Character", @character, {method: :delete, :onclick => "return confirm('Really delete this character?')", :class => 'delete_button'} %><br>
