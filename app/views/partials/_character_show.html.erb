@@ -28,7 +28,7 @@
 </div>
 <br>
 
-<% if logged_in? %>
+<% if permitted?(@character.user) %>
   <%= button_to "Edit", edit_character_path(@character), {method: :get} %>
 <% end %><br>
 

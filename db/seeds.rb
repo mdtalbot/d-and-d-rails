@@ -1,6 +1,3 @@
-#Sample User for testing
-User.create(username: 'lane', email_address: "lane.miller.biz@gmail.com", password: 'pass', password_confirmation: 'pass')
-
 def monster_parsing
 all_monster_data = RestClient.get("http://www.dnd5eapi.co/api/monsters")
 parsed_monster_data = JSON.parse(all_monster_data)
@@ -23,6 +20,7 @@ end
 
 def create_new_monster
   monster_info.each do |monster_key, monster_val|
+    monster_val["challenge_rating"] = 0.1 if monster_val["challenge_rating"] == 0.0
 
     Monster.create(
     name: monster_key,
@@ -49,6 +47,9 @@ def create_new_monster
 end
 
 create_new_monster
+
+#Sample User for testing
+User.create(username: 'guest', email_address: "guest@guest.com", password: 'guest', password_confirmation: 'guest')
 
 #Character class seeds
 CharClass.create(name: "Barbarian", description: "A fierce warrior of primitive background who can enter a battle rage.")

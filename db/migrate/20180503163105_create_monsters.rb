@@ -5,7 +5,7 @@ class CreateMonsters < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :size
       t.integer :hit_points
-      t.integer :challenge_rating
+      t.decimal :challenge_rating
       t.integer :strength
       t.integer :dexterity
       t.integer :constitution

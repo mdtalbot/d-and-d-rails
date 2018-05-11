@@ -10,6 +10,10 @@ class Monster < ApplicationRecord
     encounter.monster_encounters.find_by(monster_id: self.id).quantity
   end
 
+  def monster_name_and_cr
+    "#{name} || CR #{challenge_rating}"
+  end
+
   MONSTER_SIZES = ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]
 
   end

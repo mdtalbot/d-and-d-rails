@@ -55,7 +55,7 @@
     </div>
   <% end %>
 
-<% if logged_in? %>
+<% if permitted?(@encounter.user) %>
   <%= button_to "Edit", edit_encounter_path(@encounter), {method: :get} %>
 <% end %><br>
 
