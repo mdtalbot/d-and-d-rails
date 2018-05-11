@@ -1,3 +1,4 @@
+<body class="welcome">
 <%= render 'partials/notices' %>
 
 <% if session[:user_id] == @user.id %>
@@ -7,3 +8,4 @@
     <br><br><br>
   <%= button_to "Delete my Account", @user, {method: :delete, :onclick => "return confirm('Really delete your Account??\nThis action cannot be undone!')"} %><br>
 <% end %>
+</body>

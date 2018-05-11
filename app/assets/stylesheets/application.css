@@ -69,3 +69,8 @@
    color: yellow;
    font-weight: bold;
  }
+
+body.welcome{
+     background-image: url("https://cdn.wallpapersafari.com/85/53/q0GSPI.jpg");
+     background-size: cover;
+ }
