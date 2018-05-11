@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  resources :character_encounters
-  resources :monster_encounters
+  # resources :character_encounters
+  # resources :monster_encounters
   resources :char_class, only: [:index, :show]
   resources :char_race, only: [:index, :show]
   resources :alignment, only: [:index, :show]
 
   get "/pets/search", to: "pets#search", as: "pets_search"
-  resources :pets
+  # resources :pets
   get "/characters/search", to: "characters#search", as: "characters_search"
   resources :characters
   get "/monsters/search", to: "monsters#search", as: "monsters_search"
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create', as: 'sessions'
   post '/logout', to: 'sessions#destroy'
 
-  resources :users
+  resources :users, except: :index
   get '/signup', to: 'users#new', as: 'register'
 
   get '/users/:id/encounters', to: 'users#encounters_index', as: 'my_encounters'
@@ -35,4 +35,6 @@ Rails.application.routes.draw do
 
   root 'application#home'
   get '/analytics', to: 'application#analytics'
+
+  get "*path", to: 'application#redirect'
 end

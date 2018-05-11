@@ -1,3 +1,5 @@
+<%= render 'partials/notices' %>
+
 <% if session[:user_id] == @user.id %>
   <%= button_to "My Encounters", my_encounters_path, {method: :get} %><br>
   <%= button_to "My Characters", my_characters_path, {method: :get} %><br>
