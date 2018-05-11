@@ -86,12 +86,12 @@
   <%= f.collection_check_boxes :character_ids, @characters, :id, :char_name_and_level %>
     <br></br>
 
-  <%= f.submit "Preview Encounter" %>
+  <%= f.submit "Preview Encounter", :class => 'back_to_homepage_button' %>
 <% end %>
   <br>
 
-<%= button_to "Browse All Monsters", monsters_path, {method: :get} %><br>
+<%= button_to "Browse All Monsters", monsters_path, :method => :get, :class => 'back_to_homepage_button' %><br>
   <br>
-<%= button_to "Browse All Characters", characters_path, {method: :get} %><br>
+<%= button_to "Browse All Characters", characters_path, :method => :get, :class => 'back_to_homepage_button' %><br>
   <br>
-<%= button_to "Back to Homepage", root_path, {method: :get} %><br>
+<%= button_to "Back to Homepage", root_path, :method => :get, :class => 'back_to_homepage_button' %><br>
