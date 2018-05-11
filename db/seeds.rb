@@ -22,7 +22,7 @@ def create_new_monster
   monster_info.each do |monster_key, monster_val|
     monster_val["challenge_rating"] = 0.1 if monster_val["challenge_rating"] == 0.0
 
-    Monster.create(
+    mob = Monster.create(
     name: monster_key,
     hit_points: monster_val["hit_points"],
     size: monster_val["size"],
@@ -41,6 +41,13 @@ def create_new_monster
     history: monster_val["history"],
     perception: monster_val["perception"],
     )
+
+    mob.stats.find_all do |key, value|
+      if value == nil
+        mob.update(key => 0)
+      end
+    end
+    mob.save
 
   end
 
