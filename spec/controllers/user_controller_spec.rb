@@ -6,5 +6,4 @@ RSpec.describe UsersController, type: :controller do
     expect(create).to be_valid
   end
 
-
 end
