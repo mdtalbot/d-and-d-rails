@@ -59,11 +59,11 @@ create_new_monster
 User.create(username: 'guest', email_address: "guest@guest.com", password: 'guest', password_confirmation: 'guest')
 
 #Character class seeds
-CharClass.create(name: "Barbarian", description: "A fierce warrior of primitive background who can enter a battle rage.")
-CharClass.create(name: "Bard", description: "An inspiring magician whose music echoes the power of creation.")
-CharClass.create(name: "Cleric", description: "A priestly champion who wields divine magic in service of a higher power.")
-CharClass.create(name: "Druid", description: "A priest of the Old Faith who wields the powers of nature and adopts animal forms.")
-CharClass.create(name: "Fighter", description: "A master of martial combat who is skilled with a variety of weapons and armor.")
+CharClass.create(name: "Barbarian", description: "A fierce warrior of primitive background who can enter a battle rage.", image_url: "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/342/420/618/636272680339895080.png")
+CharClass.create(name: "Bard", description: "An inspiring magician whose music echoes the power of creation.", image_url: "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/369/420/618/636272705936709430.png")
+CharClass.create(name: "Cleric", description: "A priestly champion who wields divine magic in service of a higher power.", image_url: "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/371/420/618/636272706155064423.png")
+CharClass.create(name: "Druid", description: "A priest of the Old Faith who wields the powers of nature and adopts animal forms.", image_url: "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/346/420/618/636272691461725405.png")
+CharClass.create(name: "Fighter", description: "A master of martial combat who is skilled with a variety of weapons and armor.", image_url: "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/359/420/618/636272697874197438.png")
 CharClass.create(name: "Monk", description: "A master of martial arts who harnesses the power of the body in pursuit of physical and spiritual perfection.")
 CharClass.create(name: "Paladin", description: "A holy warrior who is bound to their deity through a sacred oath.")
 CharClass.create(name: "Ranger", description: "A warrior who combats threats on the edges of civilization and defends nature.")
